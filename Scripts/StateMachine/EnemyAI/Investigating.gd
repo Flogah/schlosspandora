@@ -10,6 +10,8 @@ func enter(previous_state_path: String, data := {}) -> void:
 	if !investigation_point:
 		finished.emit("IdleState")
 	navigation_agent_3d.set_target_position(investigation_point)
+	
+	print("Enter Investigation State, checking at " + str(investigation_point))
 
 func physics_update(_delta: float) -> void:
 	var destination = navigation_agent_3d.get_next_path_position()

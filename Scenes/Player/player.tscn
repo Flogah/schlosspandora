@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://n2l08do6t6rl" path="res://Scenes/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="PackedScene" uid="uid://b8e558yv6w0sf" path="res://Scenes/Player/player_hands.tscn" id="2_a3d8c"]
+[ext_resource type="Script" uid="uid://drfutgub3j3nu" path="res://Scenes/Player/pause_menu.gd" id="3_xpcdj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvnfx"]
 
@@ -27,3 +28,32 @@ fov = 90.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerHands" unique_id=186217914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27528107, -0.2837209)
 shape = SubResource("SphereShape3D_a3d8c")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1588406836]
+process_mode = 3
+script = ExtResource("3_xpcdj")
+
+[node name="Control" type="Control" parent="PauseMenu" unique_id=1923941847]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/Control" unique_id=89043414]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Control/PanelContainer" unique_id=1900210855]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ButtonExit" type="Button" parent="PauseMenu/Control/PanelContainer/MarginContainer" unique_id=999098887]
+unique_name_in_owner = true
+layout_mode = 2
+text = "EXIT"

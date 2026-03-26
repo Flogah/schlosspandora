@@ -11,6 +11,8 @@ func enter(previous_state_path: String, data := {}) -> void:
 	if !target:
 		finished.emit("IdleState")
 	navigation_agent_3d.set_target_position(target.global_position)
+	
+	print("Entering Chasing State, chasing " + target.name)
 
 func physics_update(_delta: float) -> void:
 	if target:
