@@ -1,6 +1,8 @@
 extends Node3D
 class_name Door
 
+signal locked
+
 @onready var door_l: AnimatableBody3D = $Door_L
 @onready var door_r: AnimatableBody3D = $Door_R
 @onready var ia_comp_f: InteractionComponent = $IaCompFront
@@ -36,6 +38,7 @@ func lock_interaction(front: bool) -> void:
 		print("[Door] unlocked")
 	elif not is_locked:
 		print("[Door] locked")
+		locked.emit()
 		show_lock(front)
 		is_locked = true
 		lock_side_front = front
