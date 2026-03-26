@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://uasvwlk1oc0e" path="res://Assets/Textures/Monster/ew monster hinten.png" id="5_b5rfd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iyhh7"]
+height = 2.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5kmi8"]
 radius = 15.0
@@ -30,10 +31,11 @@ sprites = Dictionary[int, Texture2D]({
 3: ExtResource("5_b5rfd")
 })
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1173925126]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.25, 0)
-billboard = 2
-texture = ExtResource("1_40lkt")
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1286957988]
+unique_name_in_owner = true
+path_desired_distance = 0.2
+path_height_offset = 0.25
+debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=109380209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -57,8 +59,14 @@ metadata/_custom_type_script = "uid://cx5a04pgbppbr"
 script = ExtResource("4_wem1j")
 metadata/_custom_type_script = "uid://qock7a2nkgvi"
 
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1173925126]
+unique_name_in_owner = true
+transform = Transform3D(-0.1, 0, 8.742278e-09, 0, 0.1, 0, -8.742278e-09, 0, -0.1, 0, 1.25, 0)
+billboard = 2
+texture = ExtResource("1_40lkt")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=903462301]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.10816711, 0.6621074)
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 5.788327e-08, 0.10816711, -0.6621074)
 mesh = SubResource("PrismMesh_40lkt")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1286957988]
+[connection signal="navigation_finished" from="NavigationAgent3D" to="StateMachine/WanderingState" method="reached"]
