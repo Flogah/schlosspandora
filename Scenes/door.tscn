@@ -48,10 +48,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5485495, 1.005, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
 shape = SubResource("BoxShape3D_ab4ky")
 
-[node name="LockF" parent="." unique_id=454185793 instance=ExtResource("4_ab4ky")]
+[node name="Locks" type="Node3D" parent="." unique_id=1915773394]
+
+[node name="LockF" parent="Locks" unique_id=454185793 instance=ExtResource("4_ab4ky")]
 transform = Transform3D(0.9924437, -0.12270082, 0, 0.12270082, 0.9924437, 0, 0, 0, 1, 0.12342954, 0.58619493, 0)
 visible = false
 
-[node name="LockB" parent="." unique_id=385174547 instance=ExtResource("4_ab4ky")]
+[node name="LockB" parent="Locks" unique_id=385174547 instance=ExtResource("4_ab4ky")]
 transform = Transform3D(-0.99254614, 0.12186935, -8.742278e-08, 0.12186935, 0.99254614, 0, 8.677114e-08, -1.0654157e-08, -1, -0.126376, 0.58619493, 0)
 visible = false

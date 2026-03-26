@@ -7,8 +7,9 @@ signal locked
 @onready var door_r: AnimatableBody3D = $Door_R
 @onready var ia_comp_f: InteractionComponent = $IaCompFront
 @onready var ia_comp_b: InteractionComponent = $IaCompBack
-@onready var lock_f: Node3D = $LockF
-@onready var lock_b: Node3D = $LockB
+@onready var lock_f: Node3D = $Locks/LockF
+@onready var lock_b: Node3D = $Locks/LockB
+@onready var locks: Node3D = $Locks
 
 var is_locked: bool = false
 var is_closed: bool = true
@@ -51,12 +52,21 @@ func open_close_interaction(front: bool) -> void:
 		else:
 			animate_closeing()
 			is_closed = true
+	else:
+		animate_ratteling(front)
 
-func animate_locking(front: bool) -> void:
-	pass
-
-func animate_unlocking(front: bool) -> void:
-	pass
+func animate_ratteling(front: bool) -> void:
+	var dir = 1
+	if front: dir = -1
+	var tween = get_tree().create_tween()
+	tween.parallel().tween_property(locks, "position", Vector3(0,0.1,0), 0.2)
+	tween.parallel().tween_property(door_l, "rotation_degrees", Vector3(0, -5*dir, 0), 0.2)
+	tween.parallel().tween_property(door_r, "rotation_degrees", Vector3(0, 5*dir, 0), 0.2)
+	tween.tween_property(locks, "position", Vector3(0,0,0), 0.2)
+	tween.parallel().tween_property(door_l, "rotation_degrees", Vector3(0, 5*dir, 0), 0.2)
+	tween.parallel().tween_property(door_r, "rotation_degrees", Vector3(0, -5*dir, 0), 0.2)
+	tween.tween_property(door_l, "rotation_degrees", Vector3(0, 0, 0), 0.2)
+	tween.parallel().tween_property(door_r, "rotation_degrees", Vector3(0, 0, 0), 0.2)
 
 func animate_opening(front: bool) -> void:
 	print("[Door] opening")
