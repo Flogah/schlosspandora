@@ -3,13 +3,22 @@ class_name Door
 
 @onready var door_l: AnimatableBody3D = $Door_L
 @onready var door_r: AnimatableBody3D = $Door_R
-
-enum door_state {closed, locked_f, locked_b, open_f, open_b}
-var state
+@onready var ia_comp_f: InteractionComponent = $IaCompFront
+@onready var ia_comp_b: InteractionComponent = $IaCompBack
 
 var is_locked: bool
 var is_closed: bool
 var lock_side_front: bool
+
+func _ready() -> void:
+	ia_comp_f.interaction.connect(door_interaction.bind(true))
+	ia_comp_b.interaction.connect(door_interaction.bind(true))
+
+func door_interaction(is_locking: bool, front: bool):
+	if is_locking:
+		lock_interaction(front)
+	else:
+		open_close_interaction(front)
 
 func lock_interaction(front: bool) -> void:
 	if is_locked and lock_side_front == front: is_locked = false
