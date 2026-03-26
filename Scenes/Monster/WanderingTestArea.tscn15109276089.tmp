@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b6ske5ftkv73x"]
+
+[ext_resource type="Texture2D" uid="uid://dmiqcou216o7u" path="res://Assets/Textures/ProtoTex/Dark/texture_04.png" id="1_lvtyj"]
+[ext_resource type="PackedScene" uid="uid://c6glhgr804s8d" path="res://Scenes/Monster/Monster.tscn" id="2_57pdl"]
+[ext_resource type="Script" uid="uid://c8dydwj20x8aj" path="res://Scenes/Monster/camera_turning.gd" id="3_uu6u7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_57pdl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_uu6u7"]
+sky_material = SubResource("ProceduralSkyMaterial_57pdl")
+
+[sub_resource type="Environment" id="Environment_vntth"]
+background_mode = 2
+sky = SubResource("Sky_uu6u7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_57pdl"]
+vertices = PackedVector3Array(-0.25, 0.5, -3, 0, 0.5, -2.25, 0.5, 0.5, -2.5, 0.5, 0.5, -3.75, -3, 0.5, 2.25, -2.75, 0.5, 1.25, -2.25, 0.5, -1, -2.25, 0.5, -2.75, -7, 0.5, -7, -7, 0.5, 2.25, -1.5, 0.5, 1.25, -1.5, 0.5, -0.75, 1.5, 0.5, -4, 1.5, 0.5, -7, 0.75, 0.5, -1.75, -0.25, 0.5, -0.75, 2.75, 0.5, -3.75, 2.75, 0.5, -2, 3.75, 0.5, 0.25, 7, 0.5, 1.25, 7, 0.5, -7, -1, 0.5, 1.25, -0.75, 0.5, 2, 1.75, 0.5, 2, 2, 0.5, 0.25, 4, 0.5, 1.25, 2, 0.5, 2.5, -1, 0.5, 3.5, -2.75, 0.5, 3.5, -7, 0.5, 7, 3.75, 0.5, 2.5, 7, 0.5, 7)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 10, 6), PackedInt32Array(6, 10, 5), PackedInt32Array(13, 12, 3), PackedInt32Array(0, 7, 3), PackedInt32Array(3, 7, 13), PackedInt32Array(13, 7, 8), PackedInt32Array(2, 14, 1), PackedInt32Array(1, 14, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(21, 10, 11), PackedInt32Array(11, 15, 21), PackedInt32Array(21, 15, 22), PackedInt32Array(22, 15, 24), PackedInt32Array(22, 24, 23), PackedInt32Array(12, 13, 16), PackedInt32Array(16, 13, 20), PackedInt32Array(15, 14, 24), PackedInt32Array(24, 14, 17), PackedInt32Array(24, 17, 18), PackedInt32Array(19, 25, 18), PackedInt32Array(23, 26, 22), PackedInt32Array(22, 26, 27), PackedInt32Array(29, 28, 27), PackedInt32Array(25, 19, 30), PackedInt32Array(30, 19, 31), PackedInt32Array(4, 28, 9), PackedInt32Array(9, 28, 29), PackedInt32Array(26, 30, 27), PackedInt32Array(27, 30, 31), PackedInt32Array(27, 31, 29)]
+agent_height = 2.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_57pdl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6u7"]
+albedo_texture = ExtResource("1_lvtyj")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vntth"]
+material = SubResource("StandardMaterial3D_uu6u7")
+size = Vector2(15, 15)
+
+[node name="WanderingTestArea" type="Node3D" unique_id=872312238]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1475221989]
+environment = SubResource("Environment_vntth")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1903582922]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Monster" parent="." unique_id=1405422179 instance=ExtResource("2_57pdl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=702353969]
+navigation_mesh = SubResource("NavigationMesh_57pdl")
+
+[node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=365124793]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=758734339]
+visible = false
+shape = SubResource("WorldBoundaryShape3D_57pdl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=1765555467]
+mesh = SubResource("PlaneMesh_vntth")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=879538781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8522402, 0, 2.387733)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1511409323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8496346, 0, 1.483526)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1321519448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0384536, 0, -1.7716167)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1544808655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6289554, 0, -2.8340595)
+use_collision = true
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1160110735]
+transform = Transform3D(1, 0, 0, 0, 0.8987557, 0.43844965, 0, -0.43844965, 0.8987557, 0, 0, 0)
+script = ExtResource("3_uu6u7")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=76338489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.994)
