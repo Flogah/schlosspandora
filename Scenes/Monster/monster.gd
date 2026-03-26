@@ -66,5 +66,7 @@ func check_for_player():
 		var ray: RayCast3D = eye
 		if ray.is_colliding():
 			var colliding_body = ray.get_collider()
-			if colliding_body and colliding_body.is_class("Player"):
-				return colliding_body
+			if colliding_body:
+				print(colliding_body.name)
+				if colliding_body.is_class("CharacterBody3D"):
+					return colliding_body
