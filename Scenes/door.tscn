@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bj07x860tx50j" path="res://Scenes/door.gd" id="1_p0e35"]
 [ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blender/Door.blend" id="1_w6aom"]
 [ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/interaction_component.tscn" id="3_fahql"]
+[ext_resource type="PackedScene" uid="uid://8jprp174nmgl" path="res://Assets/Blender/Lock.blend" id="4_ab4ky"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fahql"]
 size = Vector3(0.08203125, 2.2626953, 1)
@@ -16,7 +17,7 @@ script = ExtResource("1_p0e35")
 [node name="Door_L" type="AnimatableBody3D" parent="." unique_id=1538567378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, 1)
 
-[node name="Door" parent="Door_L" unique_id=1318824509 instance=ExtResource("1_w6aom")]
+[node name="Door" parent="Door_L" unique_id=1883463864 instance=ExtResource("1_w6aom")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door_L" unique_id=271691376]
@@ -26,7 +27,7 @@ shape = SubResource("BoxShape3D_fahql")
 [node name="Door_R" type="AnimatableBody3D" parent="." unique_id=923482039]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, -1)
 
-[node name="Door" parent="Door_R" unique_id=475854060 instance=ExtResource("1_w6aom")]
+[node name="Door" parent="Door_R" unique_id=32876004 instance=ExtResource("1_w6aom")]
 transform = Transform3D(4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, 0, -3.821371e-15, 8.742278e-08, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door_R" unique_id=1066378967]
@@ -46,3 +47,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5485495, 1.005, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IaCompBack" unique_id=1091141852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
 shape = SubResource("BoxShape3D_ab4ky")
+
+[node name="LockF" parent="." unique_id=454185793 instance=ExtResource("4_ab4ky")]
+transform = Transform3D(0.9924437, -0.12270082, 0, 0.12270082, 0.9924437, 0, 0, 0, 1, 0.12342954, 0.58619493, 0)
+visible = false
+
+[node name="LockB" parent="." unique_id=385174547 instance=ExtResource("4_ab4ky")]
+transform = Transform3D(-0.99254614, 0.12186935, -8.742278e-08, 0.12186935, 0.99254614, 0, 8.677114e-08, -1.0654157e-08, -1, -0.126376, 0.58619493, 0)
+visible = false

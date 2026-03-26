@@ -5,6 +5,8 @@ class_name Door
 @onready var door_r: AnimatableBody3D = $Door_R
 @onready var ia_comp_f: InteractionComponent = $IaCompFront
 @onready var ia_comp_b: InteractionComponent = $IaCompBack
+@onready var lock_f: Node3D = $LockF
+@onready var lock_b: Node3D = $LockB
 
 var is_locked: bool = false
 var is_closed: bool = true
@@ -30,9 +32,11 @@ func door_interaction(is_locking: bool, front: bool):
 func lock_interaction(front: bool) -> void:
 	if is_locked and lock_side_front == front: 
 		is_locked = false
+		hide_lock()
 		print("[Door] unlocked")
 	elif not is_locked:
 		print("[Door] locked")
+		show_lock(front)
 		is_locked = true
 		lock_side_front = front
 
@@ -69,3 +73,13 @@ func animate_closeing() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(door_l, "rotation_degrees", Vector3(0, 0, 0), 1.0)
 	tween.parallel().tween_property(door_r, "rotation_degrees", Vector3(0, 0, 0), 1.0)
+
+func show_lock(front: bool):
+	if front:
+		lock_f.visible = true
+	else:
+		lock_b.visible = true
+
+func hide_lock():
+	lock_f.visible = false
+	lock_b.visible = false
