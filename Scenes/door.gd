@@ -37,7 +37,7 @@ func lock_interaction(front: bool) -> void:
 		is_locked = false
 		hide_lock()
 		print("[Door] unlocked")
-	elif not is_locked:
+	elif not is_locked and is_closed:
 		print("[Door] locked")
 		locked.emit()
 		show_lock(front)
@@ -50,7 +50,7 @@ func open_close_interaction(front: bool) -> void:
 			is_closed = false
 			animate_opening(front)
 		else:
-			animate_closeing()
+			await animate_closeing()
 			is_closed = true
 	else:
 		animate_ratteling(front)
@@ -86,6 +86,7 @@ func animate_closeing() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(door_l, "rotation_degrees", Vector3(0, 0, 0), 1.0)
 	tween.parallel().tween_property(door_r, "rotation_degrees", Vector3(0, 0, 0), 1.0)
+	await tween.finished
 
 func show_lock(front: bool):
 	if front:
