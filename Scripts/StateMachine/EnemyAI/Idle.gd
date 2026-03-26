@@ -6,7 +6,6 @@ func enter(previous_state_path: String, data := {}) -> void:
 
 func physics_update(_delta: float) -> void:
 	owner.velocity = Vector3(0,0,0)
-	print(owner.velocity)
 	owner.move_and_slide()
 
 func wander():

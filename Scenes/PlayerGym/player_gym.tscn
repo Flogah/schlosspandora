@@ -2,13 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bu11c4sek7gca" path="res://Assets/Textures/ProtoTex/Green/texture_10.png" id="1_8bh2y"]
 [ext_resource type="PackedScene" uid="uid://273w5v8pes75" path="res://Scenes/Player/player.tscn" id="1_np5y3"]
+[ext_resource type="NavigationMesh" uid="uid://cy4kd77f7bohp" path="res://Scenes/Monster/navigation_mesh.tres" id="2_0m8kv"]
 [ext_resource type="PackedScene" uid="uid://6lodr0q515bt" path="res://Scenes/Door/door.tscn" id="2_np5y3"]
 [ext_resource type="Texture2D" uid="uid://d0ad5mw5kkonr" path="res://Assets/Textures/ProtoTex/Purple/texture_08.png" id="3_m6mmj"]
 [ext_resource type="Texture2D" uid="uid://dyqctl7jbgw8" path="res://Assets/Textures/ProtoTex/Orange/texture_10.png" id="4_ujgds"]
 [ext_resource type="PackedScene" uid="uid://dq8g0iq7bp1hn" path="res://Scenes/Organ/organ.tscn" id="6_m6mmj"]
+[ext_resource type="PackedScene" uid="uid://c6glhgr804s8d" path="res://Scenes/Monster/Monster.tscn" id="7_2kofv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2apua"]
-size = Vector3(39.835938, 0.04296875, 40.07422)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0m8kv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66yaj"]
 albedo_texture = ExtResource("1_8bh2y")
@@ -44,7 +45,6 @@ size = Vector3(1.5, 0.5, 1)
 
 [sub_resource type="Environment" id="Environment_np5y3"]
 background_energy_multiplier = 1.62
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -58,12 +58,14 @@ volumetric_fog_albedo = Color(0, 0, 0, 1)
 [node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_np5y3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3087177, 0.016820967, -8.169556)
 
-[node name="env" type="Node3D" parent="." unique_id=602862937]
+[node name="env" type="NavigationRegion3D" parent="." unique_id=118978587]
+navigation_mesh = ExtResource("2_0m8kv")
 
 [node name="Floor" type="StaticBody3D" parent="env" unique_id=2021753838]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="env/Floor" unique_id=122421955]
-shape = SubResource("BoxShape3D_2apua")
+visible = false
+shape = SubResource("WorldBoundaryShape3D_0m8kv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="env/Floor" unique_id=1047104103]
 transform = Transform3D(40, 0, 0, 0, 0.1, 0, 0, 0, 40, 0, 0, 0.07077026)
@@ -156,3 +158,8 @@ environment = SubResource("Environment_np5y3")
 [node name="Organ" parent="." unique_id=752037423 node_paths=PackedStringArray("kill_door") instance=ExtResource("6_m6mmj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7020884, 0, -8.398968)
 kill_door = NodePath("../env/Door")
+
+[node name="Enemies" type="Node3D" parent="." unique_id=191053833]
+
+[node name="Monster" parent="Enemies" unique_id=1405422179 instance=ExtResource("7_2kofv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.503592, 9.536743e-07, 7.4818363)
