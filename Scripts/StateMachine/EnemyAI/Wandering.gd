@@ -12,7 +12,7 @@ func physics_update(_delta: float) -> void:
 	owner.target = destination
 	var local_destination = destination - owner.global_position
 	var direction = local_destination.normalized()
-	var new_velocity = direction * 10.0
+	var new_velocity = direction * owner.chase_speed * 0.5
 	
 	owner.velocity = new_velocity
 	owner.move_and_slide()

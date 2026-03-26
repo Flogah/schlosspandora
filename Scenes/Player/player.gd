@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Player
 
 @export var SPEED = 2.0
 var stand_height = 2.0

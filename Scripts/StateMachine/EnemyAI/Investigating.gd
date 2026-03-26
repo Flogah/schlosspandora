@@ -1,11 +1,22 @@
 extends State
 class_name InvestigatingState
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var navigation_agent_3d: NavigationAgent3D = %NavigationAgent3D
 
+var investigation_point: Vector3
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func enter(previous_state_path: String, data := {}) -> void:
+	investigation_point = data["last_noise"]
+	if !investigation_point:
+		finished.emit("IdleState")
+	navigation_agent_3d.set_target_position(investigation_point)
+
+func physics_update(_delta: float) -> void:
+	var destination = navigation_agent_3d.get_next_path_position()
+	owner.target = destination
+	var local_destination = destination - owner.global_position
+	var direction = local_destination.normalized()
+	var new_velocity = direction * owner.chase_speed * 0.5
+	
+	owner.velocity = new_velocity
+	owner.move_and_slide()
