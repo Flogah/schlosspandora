@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c6glhgr804s8d"]
 
 [ext_resource type="Script" uid="uid://cyhjg1ac6c5tt" path="res://Scenes/Monster/monster.gd" id="1_4bei1"]
-[ext_resource type="Texture2D" uid="uid://qyavo1f4lwsh" path="res://Assets/Textures/Monster/ew monster.png" id="1_40lkt"]
 [ext_resource type="Script" uid="uid://dtdg04bielo83" path="res://Scripts/StateMachine/state_machine.gd" id="2_5kmi8"]
 [ext_resource type="Texture2D" uid="uid://cpxuqcctlyv18" path="res://Assets/Textures/Monster/ew 2 vorne.png" id="2_hr3cx"]
 [ext_resource type="Script" uid="uid://cx5a04pgbppbr" path="res://Scripts/StateMachine/EnemyAI/Wandering.gd" id="3_40lkt"]
@@ -64,7 +63,7 @@ metadata/_custom_type_script = "uid://qock7a2nkgvi"
 unique_name_in_owner = true
 transform = Transform3D(-0.1, 0, 8.742278e-09, 0, 0.1, 0, -8.742278e-09, 0, -0.1, 0, 1.25, 0)
 billboard = 2
-texture = ExtResource("1_40lkt")
+texture = ExtResource("2_hr3cx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=903462301]
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 5.788327e-08, 0.10816711, -0.6621074)

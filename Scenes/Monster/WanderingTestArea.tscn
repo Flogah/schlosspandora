@@ -18,8 +18,8 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_57pdl"]
-vertices = PackedVector3Array(-1.75, 0.5, 0.5, -1.5, 0.5, 0, -2.5, 0.5, -0.25, -3.25, 0.5, 0.75, -2, 0.5, -3.75, 1.5, 0.5, -6.25, -6.25, 0.5, -6.25, -2.75, 0.5, -3.25, -3, 0.5, -1, 0.25, 0.5, -4.5, 1.5, 0.5, -4.75, 0, 0.5, -3.75, -3.75, 0.5, 2.25, -6.25, 0.5, 2.25, 0, 0.5, 3, 1.5, 0.5, 3, 1, 0.5, 2.25, -0.25, 0.5, 0, -0.25, 0.5, 1, 3.25, 0.5, -4.25, 6.25, 0.5, -6.25, 1, 0.5, 0.5, 3.25, 0.5, -1.5, 4.5, 0.5, 0, 6.25, 0.5, 1.25, 3.75, 0.5, -0.5, 0.5, 0.5, -1, 1.5, 0.5, -0.25, 4.75, 0.5, 1.25, 2.5, 0.5, -1, 4.25, 0.5, 3, 6.25, 0.5, 6.25, -3.75, 0.5, 3.25, -1, 0.5, 4.25, -2.75, 0.5, 4.25, -6.25, 0.5, 6.25)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(8, 2, 3), PackedInt32Array(5, 10, 9), PackedInt32Array(4, 9, 11), PackedInt32Array(3, 12, 8), PackedInt32Array(8, 12, 13), PackedInt32Array(8, 13, 7), PackedInt32Array(7, 13, 6), PackedInt32Array(5, 9, 4), PackedInt32Array(16, 15, 14), PackedInt32Array(1, 17, 0), PackedInt32Array(0, 17, 18), PackedInt32Array(10, 5, 19), PackedInt32Array(19, 5, 20), PackedInt32Array(17, 21, 18), PackedInt32Array(18, 21, 16), PackedInt32Array(18, 16, 14), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 19), PackedInt32Array(24, 19, 20), PackedInt32Array(23, 25, 22), PackedInt32Array(27, 21, 26), PackedInt32Array(26, 21, 17), PackedInt32Array(24, 28, 23), PackedInt32Array(27, 26, 29), PackedInt32Array(22, 25, 29), PackedInt32Array(29, 25, 27), PackedInt32Array(28, 24, 30), PackedInt32Array(30, 24, 31), PackedInt32Array(13, 12, 32), PackedInt32Array(33, 14, 15), PackedInt32Array(35, 34, 33), PackedInt32Array(32, 34, 13), PackedInt32Array(13, 34, 35), PackedInt32Array(30, 31, 33), PackedInt32Array(33, 31, 35), PackedInt32Array(33, 15, 30)]
+vertices = PackedVector3Array(-3, 0.5, 1.25, -3, 0.5, -1.75, -4.25, 0.5, -2, -5.25, 0.5, 1.5, -4.25, 0.5, -3.75, -3, 0.5, -4, -3, 0.5, -7, -7, 0.5, -7, -7, 0.5, 7, -5.25, 0.5, 5, -0.75, 0.5, 7, -0.75, 0.5, 5, 0.5, 0.5, -5.5, 1.75, 0.5, -5.75, 1.75, 0.5, -7, 1.75, 0.5, 0.5, 2.5, 0.5, 0.25, 2.25, 0.5, -1.75, 0.5, 0.5, -2, -2, 0.5, -3.75, -2, 0.5, -2, -1, 0.5, 1.25, -0.75, 0.5, 2, 1.75, 0.5, 2, 3, 0.5, -5.5, 7, 0.5, -7, 3, 0.5, -2, 3.75, 0.5, 0.25, 7, 0.5, 1.5, 4, 0.5, 1.5, 1.5, 2.5, -4.75, 1.5, 2.5, -2.75, 2, 2.5, -2.75, 2, 2.5, -4.75, 2, 0.5, 2.5, 3.75, 0.5, 2.5, 7, 0.5, 7, -4.25, 1, 2.25, -4.25, 1, 4.25, -1.75, 1, 4.25, -1.75, 1, 2.25)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(3, 9, 8), PackedInt32Array(11, 10, 9), PackedInt32Array(9, 10, 8), PackedInt32Array(14, 13, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(20, 19, 18), PackedInt32Array(18, 19, 12), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 15), PackedInt32Array(5, 6, 19), PackedInt32Array(19, 6, 12), PackedInt32Array(12, 6, 14), PackedInt32Array(20, 18, 1), PackedInt32Array(1, 18, 0), PackedInt32Array(0, 18, 21), PackedInt32Array(21, 18, 15), PackedInt32Array(13, 14, 24), PackedInt32Array(24, 14, 25), PackedInt32Array(17, 26, 16), PackedInt32Array(16, 26, 27), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 24), PackedInt32Array(28, 24, 25), PackedInt32Array(28, 29, 27), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31), PackedInt32Array(23, 34, 22), PackedInt32Array(22, 34, 11), PackedInt32Array(35, 29, 28), PackedInt32Array(11, 35, 10), PackedInt32Array(10, 35, 28), PackedInt32Array(10, 28, 36), PackedInt32Array(11, 34, 35), PackedInt32Array(40, 39, 37), PackedInt32Array(37, 39, 38)]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_57pdl"]
 
@@ -56,20 +56,23 @@ shape = SubResource("WorldBoundaryShape3D_57pdl")
 mesh = SubResource("PlaneMesh_vntth")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=879538781]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8522402, 0, 2.387733)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.971869, 0, 3.285255)
 use_collision = true
+size = Vector3(3.2392578, 1, 2.795044)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1511409323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8496346, 0, 1.483526)
 use_collision = true
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1321519448]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0384536, 0, -1.7716167)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0283089, 0.907959, -2.8507173)
 use_collision = true
+size = Vector3(1, 2.815918, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1544808655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6289554, 0, -2.8340595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7661624, 0.80758667, -3.7659442)
 use_collision = true
+size = Vector3(1.2744141, 2.6151733, 2.8637695)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1160110735]
 transform = Transform3D(1, 0, 0, 0, 0.8987557, 0.43844965, 0, -0.43844965, 0.8987557, 0, 0, 0)
