@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://env5kh50q2q3" path="res://Assets/Textures/Monster/ew 2 rechts.png" id="4_8veg5"]
 [ext_resource type="Script" uid="uid://qock7a2nkgvi" path="res://Scripts/StateMachine/EnemyAI/Idle.gd" id="4_wem1j"]
 [ext_resource type="Texture2D" uid="uid://bpk2erxc70hrb" path="res://Assets/Textures/Monster/ew 2 hinten.png" id="5_yw4gv"]
+[ext_resource type="Script" uid="uid://dg1m1xlsyewxw" path="res://Scripts/StateMachine/EnemyAI/Chasing.gd" id="9_hr3cx"]
+[ext_resource type="Script" uid="uid://b1dtmuk1ivihl" path="res://Scripts/StateMachine/EnemyAI/Devouring.gd" id="10_b5rfd"]
+[ext_resource type="Script" uid="uid://b2hx6rbtvj7t5" path="res://Scripts/StateMachine/EnemyAI/Investigating.gd" id="11_8veg5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iyhh7"]
 height = 2.5
@@ -24,6 +27,7 @@ size = Vector3(0.3, 0.6, 0.1)
 
 [node name="Monster" type="CharacterBody3D" unique_id=1405422179]
 script = ExtResource("1_4bei1")
+chase_speed = 5.0
 sprites = Dictionary[int, Texture2D]({
 0: ExtResource("2_hr3cx"),
 1: ExtResource("3_b5rfd"),
@@ -35,7 +39,6 @@ sprites = Dictionary[int, Texture2D]({
 unique_name_in_owner = true
 path_desired_distance = 0.2
 path_height_offset = 0.25
-debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=109380209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -47,17 +50,30 @@ shape = SubResource("CapsuleShape3D_iyhh7")
 shape = SubResource("SphereShape3D_5kmi8")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2023991083 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("2_5kmi8")
 initial_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://dtdg04bielo83"
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=741013926]
+script = ExtResource("4_wem1j")
+metadata/_custom_type_script = "uid://qock7a2nkgvi"
 
 [node name="WanderingState" type="Node" parent="StateMachine" unique_id=614336248]
 script = ExtResource("3_40lkt")
 metadata/_custom_type_script = "uid://cx5a04pgbppbr"
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=741013926]
-script = ExtResource("4_wem1j")
-metadata/_custom_type_script = "uid://qock7a2nkgvi"
+[node name="ChasingState" type="Node" parent="StateMachine" unique_id=581412549]
+script = ExtResource("9_hr3cx")
+metadata/_custom_type_script = "uid://dg1m1xlsyewxw"
+
+[node name="DevouringState" type="Node" parent="StateMachine" unique_id=1488255686]
+script = ExtResource("10_b5rfd")
+metadata/_custom_type_script = "uid://b1dtmuk1ivihl"
+
+[node name="InvestigatingState" type="Node" parent="StateMachine" unique_id=415020885]
+script = ExtResource("11_8veg5")
+metadata/_custom_type_script = "uid://b2hx6rbtvj7t5"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1173925126]
 unique_name_in_owner = true
@@ -68,5 +84,93 @@ texture = ExtResource("2_hr3cx")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=903462301]
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 5.788327e-08, 0.10816711, -0.6621074)
 mesh = SubResource("PrismMesh_40lkt")
+
+[node name="VisionCone" type="Node3D" parent="." unique_id=1318488920]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64483, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="VisionCone" unique_id=1986673416]
+transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, 0, -4.371139e-08, -1, 0.70710677, 0.70710677, -3.090862e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="VisionCone" unique_id=1966147272]
+transform = Transform3D(0.7071067, 0.7071068, -3.0908613e-08, 0, -4.371138e-08, -1, -0.7071068, 0.7071067, -3.090862e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="VisionCone" unique_id=392665993]
+transform = Transform3D(0.8660253, 0.50000006, -2.1855692e-08, 0, -4.371138e-08, -1, -0.50000006, 0.8660253, -3.785517e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="VisionCone" unique_id=282608269]
+transform = Transform3D(0.9659259, 0.25881916, -1.13133405e-08, 2.3798704e-16, -4.3711385e-08, -1, -0.25881916, 0.9659259, -4.222196e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D5" type="RayCast3D" parent="VisionCone" unique_id=52846341]
+transform = Transform3D(1, 1.1920929e-07, 0, 2.3798704e-16, -4.3711385e-08, -1, -1.1920929e-07, 1, -4.3711385e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D6" type="RayCast3D" parent="VisionCone" unique_id=407481705]
+transform = Transform3D(0.9659259, -0.25881892, 1.1313339e-08, 2.3798704e-16, -4.3711385e-08, -1, 0.25881892, 0.9659259, -4.2221956e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D7" type="RayCast3D" parent="VisionCone" unique_id=1787460747]
+transform = Transform3D(0.86602545, -0.49999988, 2.185569e-08, 2.3798704e-16, -4.3711385e-08, -1, 0.49999988, 0.86602545, -3.7855166e-08, 0, 0, 0)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D8" type="RayCast3D" parent="VisionCone" unique_id=1898337573]
+transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, -0.1830127, -0.18301274, -0.9659258, 0.68301266, 0.68301266, -0.25881907, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D9" type="RayCast3D" parent="VisionCone" unique_id=470433123]
+transform = Transform3D(0.7071067, 0.7071068, -3.0908616e-08, 0.18301271, -0.18301272, -0.9659258, -0.6830127, 0.6830126, -0.25881907, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D10" type="RayCast3D" parent="VisionCone" unique_id=2124086103]
+transform = Transform3D(0.86602545, 0.5000001, -2.1855698e-08, 0.12940954, -0.22414389, -0.9659258, -0.48296306, 0.8365163, -0.2588191, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D11" type="RayCast3D" parent="VisionCone" unique_id=1027955209]
+transform = Transform3D(0.9659259, 0.25881916, -1.131334e-08, 0.06698733, -0.25000003, -0.9659258, -0.25000012, 0.9330127, -0.25881907, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D12" type="RayCast3D" parent="VisionCone" unique_id=2090639681]
+transform = Transform3D(1, 1.1920929e-07, 0, 3.0853634e-08, -0.25881907, -0.9659258, -1.1514733e-07, 0.9659258, -0.25881907, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D13" type="RayCast3D" parent="VisionCone" unique_id=1159337532]
+transform = Transform3D(0.9659259, -0.25881892, 1.1313338e-08, -0.06698727, -0.25000003, -0.9659258, 0.24999988, 0.9330127, -0.25881907, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D14" type="RayCast3D" parent="VisionCone" unique_id=1954126706]
+transform = Transform3D(0.86602557, -0.49999997, 2.1855694e-08, -0.12940949, -0.22414392, -0.9659258, 0.48296288, 0.83651644, -0.2588191, 0, 0, 3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D15" type="RayCast3D" parent="VisionCone" unique_id=1231212776]
+transform = Transform3D(0.7071067, -0.7071067, 4.742382e-08, 0.1830127, 0.18301266, -0.9659258, 0.6830126, 0.6830126, 0.258819, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D16" type="RayCast3D" parent="VisionCone" unique_id=685265130]
+transform = Transform3D(0.7071067, 0.7071068, -3.9710404e-08, -0.18301272, 0.18301262, -0.9659258, -0.6830127, 0.68301255, 0.258819, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D17" type="RayCast3D" parent="VisionCone" unique_id=940214975]
+transform = Transform3D(0.86602545, 0.5000001, -2.2121268e-08, -0.12940957, 0.22414383, -0.9659258, -0.4829631, 0.83651626, 0.25881898, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D18" type="RayCast3D" parent="VisionCone" unique_id=1429113250]
+transform = Transform3D(0.9659259, 0.25881916, -1.1573266e-08, -0.066987336, 0.24999999, -0.9659258, -0.25000015, 0.9330127, 0.258819, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D19" type="RayCast3D" parent="VisionCone" unique_id=1496409724]
+transform = Transform3D(1, 1.1920929e-07, 0, -3.085363e-08, 0.258819, -0.9659258, -1.1514732e-07, 0.9659258, 0.258819, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D20" type="RayCast3D" parent="VisionCone" unique_id=1537458861]
+transform = Transform3D(0.9659259, -0.25881892, 2.2626677e-08, 0.06698727, 0.24999999, -0.9659258, 0.24999988, 0.9330127, 0.258819, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
+
+[node name="RayCast3D21" type="RayCast3D" parent="VisionCone" unique_id=1671210478]
+transform = Transform3D(0.86602557, -0.49999997, 2.2121267e-08, 0.12940952, 0.22414389, -0.9659258, 0.48296288, 0.83651644, 0.25881898, 0, 0, -3.0853634e-08)
+target_position = Vector3(0, -15, 0)
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="StateMachine/WanderingState" method="reached"]

@@ -17,8 +17,11 @@ enum side{
 }
 
 @onready var sprite: Sprite3D = %Sprite3D
+@onready var state_machine: StateMachine = %StateMachine
+@onready var vision_cone: Node3D = %VisionCone
 
 var target:Vector3
+var can_look: bool = true
 
 func _process(delta: float) -> void:
 	if target:
@@ -26,6 +29,12 @@ func _process(delta: float) -> void:
 		look_at(bla)
 	
 	adjust_sprite_for_angle()
+
+func _physics_process(delta: float) -> void:
+	var sighting = check_for_player()
+	if sighting:
+		var data: Dictionary = {"target": sighting}
+		state_machine._transition_to_next_state("ChasingState", data)
 
 func adjust_sprite_for_angle():
 	var pos_2d = Vector2(position.x, position.z)
@@ -46,3 +55,16 @@ func adjust_sprite_for_angle():
 			sprite.texture = sprites[side.left]
 		if cam_angle < -135:
 			sprite.texture = sprites[side.front]
+
+func receive_noise(last_noise: Vector3):
+	var data: Dictionary = {"last_noise": last_noise}
+	state_machine._transition_to_next_state("InvestigatingState", data)
+
+func check_for_player():
+	var rays = vision_cone.get_children()
+	for eye in rays:
+		var ray: RayCast3D = eye
+		if ray.is_colliding():
+			var colliding_body = ray.get_collider()
+			if colliding_body and colliding_body.is_class("Player"):
+				return colliding_body
