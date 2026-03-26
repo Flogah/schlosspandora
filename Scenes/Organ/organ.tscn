@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq8g0iq7bp1hn"]
 
 [ext_resource type="Script" uid="uid://stgo2jkmv2ex" path="res://Scenes/Organ/organ.gd" id="1_6rss2"]
-[ext_resource type="PackedScene" uid="uid://dv53q506rhqe3" path="res://Assets/Blenderscenes/Organs/lunge.blend" id="2_b5btd"]
+[ext_resource type="PackedScene" uid="uid://dpo775aimvet" path="res://Scenes/Organ/lung.tscn" id="2_b5btd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgy28"]
 albedo_color = Color(1, 0, 0, 1)
@@ -30,5 +30,5 @@ radius = 1.275
 height = 0.088378906
 material = SubResource("StandardMaterial3D_dgy28")
 
-[node name="lunge" parent="." unique_id=2109488349 instance=ExtResource("2_b5btd")]
-transform = Transform3D(0.53364176, 0, 0, 0, 0.75019103, 0, 0, 0, 0.67960954, -0.8768448, 1.1891735, 0.2746668)
+[node name="lung" parent="." unique_id=1212075060 instance=ExtResource("2_b5btd")]
+transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, 0, 1.43, 0.16)
