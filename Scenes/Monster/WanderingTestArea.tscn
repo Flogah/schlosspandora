@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b6ske5ftkv73x"]
+
+[ext_resource type="Texture2D" uid="uid://dmiqcou216o7u" path="res://Assets/Textures/ProtoTex/Dark/texture_04.png" id="1_lvtyj"]
+[ext_resource type="PackedScene" uid="uid://c6glhgr804s8d" path="res://Scenes/Monster/Monster.tscn" id="2_57pdl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_57pdl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_uu6u7"]
+sky_material = SubResource("ProceduralSkyMaterial_57pdl")
+
+[sub_resource type="Environment" id="Environment_vntth"]
+background_mode = 2
+sky = SubResource("Sky_uu6u7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_57pdl"]
+vertices = PackedVector3Array(-7, 0.2, -7, -7, 0.2, 7, 7, 0.2, 7, 7, 0.2, -7)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.1
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_57pdl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6u7"]
+albedo_texture = ExtResource("1_lvtyj")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vntth"]
+material = SubResource("StandardMaterial3D_uu6u7")
+size = Vector2(15, 15)
+
+[node name="WanderingTestArea" type="Node3D" unique_id=872312238]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1475221989]
+environment = SubResource("Environment_vntth")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1903582922]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Monster" parent="." unique_id=1405422179 instance=ExtResource("2_57pdl")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=76338489]
+transform = Transform3D(1, 0, 0, 0, 0.4960953, 0.8682681, 0, -0.8682681, 0.4960953, 0, 8.2878685, 6.2914963)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=702353969]
+navigation_mesh = SubResource("NavigationMesh_57pdl")
+
+[node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=365124793]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=758734339]
+visible = false
+shape = SubResource("WorldBoundaryShape3D_57pdl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Floor" unique_id=1765555467]
+mesh = SubResource("PlaneMesh_vntth")
