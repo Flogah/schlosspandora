@@ -65,60 +65,72 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.9
 
 [node name="Ramp" type="CSGMesh3D" parent="env" unique_id=1453529656]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.5204549, 0)
+use_collision = true
 mesh = SubResource("PrismMesh_cudi7")
 material = SubResource("StandardMaterial3D_beuul")
 
 [node name="Ramp2" type="CSGMesh3D" parent="env" unique_id=310747842]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0034724474, 1.5204549, 3.8051023)
+use_collision = true
 mesh = SubResource("PrismMesh_wi3aw")
 material = SubResource("StandardMaterial3D_beuul")
 
 [node name="Ramp3" type="CSGMesh3D" parent="env" unique_id=1353674945]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0034724474, 1.5204549, 7.974024)
+use_collision = true
 mesh = SubResource("PrismMesh_78ns0")
 material = SubResource("StandardMaterial3D_beuul")
 
 [node name="Block" type="CSGMesh3D" parent="env" unique_id=1141156419]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.0135894, 1.4954791, -0.0018119812)
+use_collision = true
 mesh = SubResource("BoxMesh_x62m3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block2" type="CSGMesh3D" parent="env" unique_id=1125869111]
 transform = Transform3D(-1.6968881, 0, 2.4739788, 0, 3, 0, -2.4739788, 0, -1.6968881, 6.655102, 1.4954791, -12.267886)
+use_collision = true
 mesh = SubResource("BoxMesh_x62m3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block3" type="CSGMesh3D" parent="env" unique_id=1068778405]
 transform = Transform3D(-2.4739788, 0, -1.6968881, 0, 3, 0, 1.6968881, 0, -2.4739788, -11.221718, 1.4954782, -5.630437)
+use_collision = true
 mesh = SubResource("BoxMesh_x62m3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block8" type="CSGMesh3D" parent="env" unique_id=420836301]
 transform = Transform3D(-2.9867744, 0, 0.28138638, 0, 3, 0, -0.28138638, 0, -2.9867744, -14.803951, 1.4954801, 13.817142)
+use_collision = true
 mesh = SubResource("BoxMesh_8bh2y")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block9" type="CSGMesh3D" parent="env" unique_id=1999276344]
 transform = Transform3D(-2.1227634, 0, -2.1198757, 0, 2.9999998, 0, 2.1198757, 0, -2.1227634, -3.6666918, 1.4954782, 14.828607)
+use_collision = true
 mesh = SubResource("BoxMesh_8bh2y")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block4" type="CSGMesh3D" parent="env" unique_id=1659179712]
 transform = Transform3D(-2.855089, 0, 0.921123, 0, 3, 0, -0.921123, 0, -2.855089, -6.056617, 0.71191883, -12.7140665)
+use_collision = true
 mesh = SubResource("BoxMesh_np5y3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block5" type="CSGMesh3D" parent="env" unique_id=417609816]
 transform = Transform3D(0.7178887, 0, -2.9128404, 0, 3.0000005, 0, 2.9128404, 0, 0.7178887, -11.388829, 0.71191883, 6.2415686)
+use_collision = true
 mesh = SubResource("BoxMesh_np5y3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block6" type="CSGMesh3D" parent="env" unique_id=202144187]
 transform = Transform3D(1.7481145, 0, -2.4380524, 0, 3.0000012, 0, 2.4380524, 0, 1.7481145, -10.641124, 0.71191883, -1.6699657)
+use_collision = true
 mesh = SubResource("BoxMesh_np5y3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="Block7" type="CSGMesh3D" parent="env" unique_id=379986891]
 transform = Transform3D(2.3759105, 0, 1.8316804, 0, 3.0000007, 0, -1.8316804, 0, 2.3759105, 12.08725, 0.71191883, 12.866934)
+use_collision = true
 mesh = SubResource("BoxMesh_np5y3")
 material = SubResource("StandardMaterial3D_6y5gm")
