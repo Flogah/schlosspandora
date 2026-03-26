@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b2pd5i0p57b5e"]
+
+[ext_resource type="Texture2D" uid="uid://bu11c4sek7gca" path="res://Assets/Textures/ProtoTex/Green/texture_10.png" id="1_8bh2y"]
+[ext_resource type="PackedScene" uid="uid://6lodr0q515bt" path="res://Scenes/door.tscn" id="2_np5y3"]
+[ext_resource type="Texture2D" uid="uid://d0ad5mw5kkonr" path="res://Assets/Textures/ProtoTex/Purple/texture_08.png" id="3_m6mmj"]
+[ext_resource type="Texture2D" uid="uid://dyqctl7jbgw8" path="res://Assets/Textures/ProtoTex/Orange/texture_10.png" id="4_ujgds"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2apua"]
+size = Vector3(39.835938, 0.04296875, 40.07422)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66yaj"]
+albedo_texture = ExtResource("1_8bh2y")
+uv1_scale = Vector3(8, 8, 8)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ot16b"]
+material = SubResource("StandardMaterial3D_66yaj")
+
+[sub_resource type="PrismMesh" id="PrismMesh_cudi7"]
+left_to_right = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beuul"]
+albedo_texture = ExtResource("3_m6mmj")
+
+[sub_resource type="PrismMesh" id="PrismMesh_wi3aw"]
+left_to_right = 1.5
+
+[sub_resource type="PrismMesh" id="PrismMesh_78ns0"]
+left_to_right = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_x62m3"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y5gm"]
+albedo_texture = ExtResource("4_ujgds")
+uv1_triplanar = true
+
+[node name="PlayerGym" type="Node3D" unique_id=1402596968]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=2021753838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=122421955]
+shape = SubResource("BoxShape3D_2apua")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1047104103]
+transform = Transform3D(40, 0, 0, 0, 0.1, 0, 0, 0, 40, 0, 0, 0)
+mesh = SubResource("BoxMesh_ot16b")
+
+[node name="Door" parent="." unique_id=79520329 instance=ExtResource("2_np5y3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38156223, 0, -8.06923)
+
+[node name="Door2" parent="." unique_id=1395584811 instance=ExtResource("2_np5y3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.965723, 9.536743e-07, 3.7854218)
+
+[node name="Ramp" type="CSGMesh3D" parent="." unique_id=1453529656]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.5204549, 0)
+mesh = SubResource("PrismMesh_cudi7")
+material = SubResource("StandardMaterial3D_beuul")
+
+[node name="Ramp2" type="CSGMesh3D" parent="." unique_id=310747842]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0034724474, 1.5204549, 3.8051023)
+mesh = SubResource("PrismMesh_wi3aw")
+material = SubResource("StandardMaterial3D_beuul")
+
+[node name="Ramp3" type="CSGMesh3D" parent="." unique_id=1353674945]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0034724474, 1.5204549, 7.974024)
+mesh = SubResource("PrismMesh_78ns0")
+material = SubResource("StandardMaterial3D_beuul")
+
+[node name="Block" type="CSGMesh3D" parent="." unique_id=1141156419]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.0135894, 1.4954791, -0.0018119812)
+mesh = SubResource("BoxMesh_x62m3")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block2" type="CSGMesh3D" parent="." unique_id=1125869111]
+transform = Transform3D(-1.6968881, 0, 2.4739788, 0, 3, 0, -2.4739788, 0, -1.6968881, 6.655102, 1.4954791, -12.267886)
+mesh = SubResource("BoxMesh_x62m3")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block3" type="CSGMesh3D" parent="." unique_id=1068778405]
+transform = Transform3D(-1.6968881, 0, 2.4739788, 0, 3, 0, -2.4739788, 0, -1.6968881, -8.221718, 1.4954782, -7.630437)
+mesh = SubResource("BoxMesh_x62m3")
+material = SubResource("StandardMaterial3D_6y5gm")
