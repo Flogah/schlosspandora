@@ -41,6 +41,17 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_np5y3"]
 size = Vector3(1.5, 0.5, 1)
 
+[sub_resource type="Environment" id="Environment_np5y3"]
+background_energy_multiplier = 1.62
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_begin = 1.0
+fog_depth_end = 8.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.4607
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
 [node name="PlayerGym" type="Node3D" unique_id=1402596968]
 
 [node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_np5y3")]
@@ -60,7 +71,7 @@ mesh = SubResource("BoxMesh_ot16b")
 [node name="Door" parent="env" unique_id=79520329 instance=ExtResource("2_np5y3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38156223, 0, -8.06923)
 
-[node name="Door2" parent="env" unique_id=1395584811 instance=ExtResource("2_np5y3")]
+[node name="Door2" parent="env" unique_id=1072127994 instance=ExtResource("2_np5y3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.965723, 9.536743e-07, 3.7854218)
 
 [node name="Ramp" type="CSGMesh3D" parent="env" unique_id=1453529656]
@@ -137,3 +148,6 @@ material = SubResource("StandardMaterial3D_6y5gm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=231746755]
 transform = Transform3D(0.53120637, -0.7386586, 0.41497383, 0.5519135, 0.67330444, 0.49198836, -0.6428151, -0.03231767, 0.7653394, 0, 12.828285, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1535099624]
+environment = SubResource("Environment_np5y3")
