@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8e558yv6w0sf"]
 
-[ext_resource type="Script" uid="uid://bqr00ekcnxvlo" path="res://Scenes/player_hands.gd" id="1_a8r87"]
+[ext_resource type="Script" uid="uid://bqr00ekcnxvlo" path="res://Scenes/Player/player_hands.gd" id="1_a8r87"]
 
 [node name="PlayerHands" type="Area3D" unique_id=1577920468]
 collision_layer = 8

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dq8g0iq7bp1hn"]
 
-[ext_resource type="Script" uid="uid://stgo2jkmv2ex" path="res://organ.gd" id="1_6rss2"]
+[ext_resource type="Script" uid="uid://stgo2jkmv2ex" path="res://Scenes/Organ/organ.gd" id="1_6rss2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgy28"]
 albedo_color = Color(1, 0, 0, 1)

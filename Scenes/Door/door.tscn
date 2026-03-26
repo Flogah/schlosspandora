@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://6lodr0q515bt"]
 
-[ext_resource type="Script" uid="uid://bj07x860tx50j" path="res://Scenes/door.gd" id="1_p0e35"]
-[ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blender/Door.blend" id="1_w6aom"]
-[ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/interaction_component.tscn" id="3_fahql"]
-[ext_resource type="PackedScene" uid="uid://8jprp174nmgl" path="res://Assets/Blender/Lock.blend" id="4_ab4ky"]
+[ext_resource type="Script" uid="uid://bj07x860tx50j" path="res://Scenes/Door/door.gd" id="1_p0e35"]
+[ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blenderscenes/Door.blend" id="1_w6aom"]
+[ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/Player/interaction_component.tscn" id="3_fahql"]
+[ext_resource type="PackedScene" uid="uid://8jprp174nmgl" path="res://Assets/Blenderscenes/Lock.blend" id="4_ab4ky"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fahql"]
 size = Vector3(0.08203125, 2.2626953, 1)

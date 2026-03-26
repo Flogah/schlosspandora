@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bu11c4sek7gca" path="res://Assets/Textures/ProtoTex/Green/texture_10.png" id="1_8bh2y"]
 [ext_resource type="PackedScene" uid="uid://273w5v8pes75" path="res://Scenes/Player/player.tscn" id="1_np5y3"]
-[ext_resource type="PackedScene" uid="uid://6lodr0q515bt" path="res://Scenes/door.tscn" id="2_np5y3"]
+[ext_resource type="PackedScene" uid="uid://6lodr0q515bt" path="res://Scenes/Door/door.tscn" id="2_np5y3"]
 [ext_resource type="Texture2D" uid="uid://d0ad5mw5kkonr" path="res://Assets/Textures/ProtoTex/Purple/texture_08.png" id="3_m6mmj"]
 [ext_resource type="Texture2D" uid="uid://dyqctl7jbgw8" path="res://Assets/Textures/ProtoTex/Orange/texture_10.png" id="4_ujgds"]
-[ext_resource type="PackedScene" uid="uid://dq8g0iq7bp1hn" path="res://organ.tscn" id="6_m6mmj"]
+[ext_resource type="PackedScene" uid="uid://dq8g0iq7bp1hn" path="res://Scenes/Organ/organ.tscn" id="6_m6mmj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2apua"]
 size = Vector3(39.835938, 0.04296875, 40.07422)
