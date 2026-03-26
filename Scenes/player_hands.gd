@@ -2,7 +2,6 @@ extends Area3D
 class_name PlayerHands
 
 var closest_interactable: InteractionComponent
-@export var collision: CollisionShape3D
 
 var multiple_interactables: bool = false
 
@@ -26,9 +25,11 @@ func _process(delta: float) -> void:
 		closest_interactable = closest
 	if closest_interactable:
 		if Input.is_action_just_pressed("interact"):
-				closest_interactable.interact(false)
+			print("try open")
+			closest_interactable.interact(false)
 		if Input.is_action_just_pressed("lock"):
-				closest_interactable.interact(true)
+			print("try lock")
+			closest_interactable.interact(true)
 
 func _on_area_entered(area: Area3D) -> void:
 	if closest_interactable == null:

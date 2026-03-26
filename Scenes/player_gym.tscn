@@ -44,7 +44,7 @@ size = Vector3(1.5, 0.5, 1)
 [node name="PlayerGym" type="Node3D" unique_id=1402596968]
 
 [node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_np5y3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6734915, 0.016820967, 4.321804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3087177, 0.016820967, -8.169556)
 
 [node name="env" type="Node3D" parent="." unique_id=602862937]
 
@@ -134,3 +134,6 @@ transform = Transform3D(2.3759105, 0, 1.8316804, 0, 3.0000007, 0, -1.8316804, 0,
 use_collision = true
 mesh = SubResource("BoxMesh_np5y3")
 material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=231746755]
+transform = Transform3D(0.53120637, -0.7386586, 0.41497383, 0.5519135, 0.67330444, 0.49198836, -0.6428151, -0.03231767, 0.7653394, 0, 12.828285, 0)
