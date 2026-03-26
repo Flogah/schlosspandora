@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://b2pd5i0p57b5e"]
+[gd_scene format=3 uid="uid://yerf6fxmxqai"]
 
 [ext_resource type="Texture2D" uid="uid://bu11c4sek7gca" path="res://Assets/Textures/ProtoTex/Green/texture_10.png" id="1_8bh2y"]
+[ext_resource type="PackedScene" uid="uid://273w5v8pes75" path="res://Scenes/Player/player.tscn" id="1_np5y3"]
 [ext_resource type="PackedScene" uid="uid://6lodr0q515bt" path="res://Scenes/door.tscn" id="2_np5y3"]
 [ext_resource type="Texture2D" uid="uid://d0ad5mw5kkonr" path="res://Assets/Textures/ProtoTex/Purple/texture_08.png" id="3_m6mmj"]
 [ext_resource type="Texture2D" uid="uid://dyqctl7jbgw8" path="res://Assets/Textures/ProtoTex/Orange/texture_10.png" id="4_ujgds"]
@@ -35,49 +36,89 @@ size = Vector3(3, 1, 1)
 albedo_texture = ExtResource("4_ujgds")
 uv1_triplanar = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_8bh2y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_np5y3"]
+size = Vector3(1.5, 0.5, 1)
+
 [node name="PlayerGym" type="Node3D" unique_id=1402596968]
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=2021753838]
+[node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_np5y3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6734915, 0.016820967, 4.321804)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=122421955]
+[node name="env" type="Node3D" parent="." unique_id=602862937]
+
+[node name="Floor" type="StaticBody3D" parent="env" unique_id=2021753838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="env/Floor" unique_id=122421955]
 shape = SubResource("BoxShape3D_2apua")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1047104103]
-transform = Transform3D(40, 0, 0, 0, 0.1, 0, 0, 0, 40, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="env/Floor" unique_id=1047104103]
+transform = Transform3D(40, 0, 0, 0, 0.1, 0, 0, 0, 40, 0, 0, 0.07077026)
 mesh = SubResource("BoxMesh_ot16b")
 
-[node name="Door" parent="." unique_id=79520329 instance=ExtResource("2_np5y3")]
+[node name="Door" parent="env" unique_id=79520329 instance=ExtResource("2_np5y3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38156223, 0, -8.06923)
 
-[node name="Door2" parent="." unique_id=1395584811 instance=ExtResource("2_np5y3")]
+[node name="Door2" parent="env" unique_id=1395584811 instance=ExtResource("2_np5y3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.965723, 9.536743e-07, 3.7854218)
 
-[node name="Ramp" type="CSGMesh3D" parent="." unique_id=1453529656]
+[node name="Ramp" type="CSGMesh3D" parent="env" unique_id=1453529656]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.5204549, 0)
 mesh = SubResource("PrismMesh_cudi7")
 material = SubResource("StandardMaterial3D_beuul")
 
-[node name="Ramp2" type="CSGMesh3D" parent="." unique_id=310747842]
+[node name="Ramp2" type="CSGMesh3D" parent="env" unique_id=310747842]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0034724474, 1.5204549, 3.8051023)
 mesh = SubResource("PrismMesh_wi3aw")
 material = SubResource("StandardMaterial3D_beuul")
 
-[node name="Ramp3" type="CSGMesh3D" parent="." unique_id=1353674945]
+[node name="Ramp3" type="CSGMesh3D" parent="env" unique_id=1353674945]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.0034724474, 1.5204549, 7.974024)
 mesh = SubResource("PrismMesh_78ns0")
 material = SubResource("StandardMaterial3D_beuul")
 
-[node name="Block" type="CSGMesh3D" parent="." unique_id=1141156419]
+[node name="Block" type="CSGMesh3D" parent="env" unique_id=1141156419]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.0135894, 1.4954791, -0.0018119812)
 mesh = SubResource("BoxMesh_x62m3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
-[node name="Block2" type="CSGMesh3D" parent="." unique_id=1125869111]
+[node name="Block2" type="CSGMesh3D" parent="env" unique_id=1125869111]
 transform = Transform3D(-1.6968881, 0, 2.4739788, 0, 3, 0, -2.4739788, 0, -1.6968881, 6.655102, 1.4954791, -12.267886)
 mesh = SubResource("BoxMesh_x62m3")
 material = SubResource("StandardMaterial3D_6y5gm")
 
-[node name="Block3" type="CSGMesh3D" parent="." unique_id=1068778405]
-transform = Transform3D(-1.6968881, 0, 2.4739788, 0, 3, 0, -2.4739788, 0, -1.6968881, -8.221718, 1.4954782, -7.630437)
+[node name="Block3" type="CSGMesh3D" parent="env" unique_id=1068778405]
+transform = Transform3D(-2.4739788, 0, -1.6968881, 0, 3, 0, 1.6968881, 0, -2.4739788, -11.221718, 1.4954782, -5.630437)
 mesh = SubResource("BoxMesh_x62m3")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block8" type="CSGMesh3D" parent="env" unique_id=420836301]
+transform = Transform3D(-2.9867744, 0, 0.28138638, 0, 3, 0, -0.28138638, 0, -2.9867744, -14.803951, 1.4954801, 13.817142)
+mesh = SubResource("BoxMesh_8bh2y")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block9" type="CSGMesh3D" parent="env" unique_id=1999276344]
+transform = Transform3D(-2.1227634, 0, -2.1198757, 0, 2.9999998, 0, 2.1198757, 0, -2.1227634, -3.6666918, 1.4954782, 14.828607)
+mesh = SubResource("BoxMesh_8bh2y")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block4" type="CSGMesh3D" parent="env" unique_id=1659179712]
+transform = Transform3D(-2.855089, 0, 0.921123, 0, 3, 0, -0.921123, 0, -2.855089, -6.056617, 0.71191883, -12.7140665)
+mesh = SubResource("BoxMesh_np5y3")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block5" type="CSGMesh3D" parent="env" unique_id=417609816]
+transform = Transform3D(0.7178887, 0, -2.9128404, 0, 3.0000005, 0, 2.9128404, 0, 0.7178887, -11.388829, 0.71191883, 6.2415686)
+mesh = SubResource("BoxMesh_np5y3")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block6" type="CSGMesh3D" parent="env" unique_id=202144187]
+transform = Transform3D(1.7481145, 0, -2.4380524, 0, 3.0000012, 0, 2.4380524, 0, 1.7481145, -10.641124, 0.71191883, -1.6699657)
+mesh = SubResource("BoxMesh_np5y3")
+material = SubResource("StandardMaterial3D_6y5gm")
+
+[node name="Block7" type="CSGMesh3D" parent="env" unique_id=379986891]
+transform = Transform3D(2.3759105, 0, 1.8316804, 0, 3.0000007, 0, -1.8316804, 0, 2.3759105, 12.08725, 0.71191883, 12.866934)
+mesh = SubResource("BoxMesh_np5y3")
 material = SubResource("StandardMaterial3D_6y5gm")
