@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c7xeucpw82th0" path="res://Scenes/Environment/architecture_catalogue/stairs_thin.tscn" id="9_enmjj"]
 [ext_resource type="Material" uid="uid://ofuun2bvmfmu" path="res://Assets/Materials/Prototyping/wall_greyboxing.tres" id="10_d3o4e"]
 [ext_resource type="PackedScene" uid="uid://7fdss1gxmi5c" path="res://Scenes/Environment/architecture_catalogue/long_box.tscn" id="12_u074y"]
-[ext_resource type="PackedScene" uid="uid://273w5v8pes75" path="res://Scenes/Player/player.tscn" id="13_do7sm"]
 [ext_resource type="PackedScene" uid="uid://dh367ym57ebu3" path="res://Scenes/Environment/architecture_catalogue/box.tscn" id="13_enmjj"]
 [ext_resource type="PackedScene" uid="uid://d3sdanxt83yy4" path="res://Scenes/Environment/architecture_catalogue/wide_long_box.tscn" id="14_do7sm"]
 [ext_resource type="PackedScene" uid="uid://c35lkiis7vwv5" path="res://Scenes/Environment/architecture_catalogue/railing_stairs.tscn" id="14_f58a1"]
@@ -27,15 +26,21 @@
 [ext_resource type="PackedScene" uid="uid://urh7cdsrolhl" path="res://Scenes/Environment/architecture_catalogue/pillar_side_capstone_tall.tscn" id="25_w23c8"]
 [ext_resource type="PackedScene" uid="uid://bk4hmwfbl8h2s" path="res://Scenes/Environment/architecture_catalogue/pointy_pillar.tscn" id="26_5luvi"]
 [ext_resource type="PackedScene" uid="uid://bl3teujiv4ad" path="res://Scenes/Environment/architecture_catalogue/platform_long.tscn" id="27_5guym"]
+[ext_resource type="PackedScene" uid="uid://dfefbvlhk1g2r" path="res://Scenes/Environment/architecture_catalogue/wall_long_thin.tscn" id="28_5luvi"]
 [ext_resource type="PackedScene" uid="uid://rngi5whhfm41" path="res://Scenes/Environment/architecture_catalogue/platform_long_wide.tscn" id="28_oxfeb"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hlixk"]
+[ext_resource type="PackedScene" uid="uid://ua7sv8ypk4wc" path="res://Scenes/Environment/architecture_catalogue/wall_thin.tscn" id="29_5guym"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gdl7k"]
 size = Vector2(5, 5)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_5luvi"]
+size = Vector2(5, 0.5)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_d3o4e"]
 size = Vector2(10, 5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w23c8"]
+size = Vector2(10, 0.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_do7sm"]
 size = Vector2(10, 5)
@@ -54,24 +59,9 @@ size = Vector2(10, 10)
 
 [node name="ArchCatalogue" type="Node3D" unique_id=1261234101]
 
-[node name="TestingStuff" type="Node3D" parent="." unique_id=302754302]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="TestingStuff" unique_id=1536775297]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="TestingStuff" unique_id=1187366863]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1187366863]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -112, 0, 32)
 shadow_enabled = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TestingStuff" unique_id=745832505]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestingStuff/StaticBody3D" unique_id=921152829]
-shape = SubResource("WorldBoundaryShape3D_hlixk")
-
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="TestingStuff" unique_id=225327434]
-
-[node name="Player" parent="TestingStuff" unique_id=1448344412 instance=ExtResource("13_do7sm")]
-visible = false
-SPEED = 15.0
 
 [node name="BaseBigPyrRound" parent="." unique_id=728216792 instance=ExtResource("2_enmjj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -23)
@@ -99,10 +89,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -36)
 material_override = ExtResource("1_gdl7k")
 mesh = SubResource("PlaneMesh_gdl7k")
 
+[node name="FloorSmall2" type="MeshInstance3D" parent="." unique_id=2030311358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -38)
+material_override = ExtResource("1_gdl7k")
+mesh = SubResource("PlaneMesh_5luvi")
+
 [node name="FloorLong" type="MeshInstance3D" parent="." unique_id=2025205005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -36)
 material_override = ExtResource("1_gdl7k")
 mesh = SubResource("PlaneMesh_d3o4e")
+
+[node name="FloorLong2" type="MeshInstance3D" parent="." unique_id=925788219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -38)
+material_override = ExtResource("1_gdl7k")
+mesh = SubResource("PlaneMesh_w23c8")
 
 [node name="WallLong" type="MeshInstance3D" parent="." unique_id=1480261163]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -35, 2.5, -40)
@@ -311,3 +311,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -38)
 
 [node name="PlatformLong2" parent="." unique_id=24122707 instance=ExtResource("28_oxfeb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -43)
+
+[node name="WallLongThin" parent="." unique_id=667482571 instance=ExtResource("28_5luvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 0, -44.5)
+
+[node name="WallThin" parent="." unique_id=811125640 instance=ExtResource("29_5guym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.25, 0, -44.25)
