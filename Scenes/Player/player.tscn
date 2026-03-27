@@ -3,126 +3,65 @@
 [ext_resource type="Script" uid="uid://n2l08do6t6rl" path="res://Scenes/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="PackedScene" uid="uid://b8e558yv6w0sf" path="res://Scenes/Player/player_hands.tscn" id="2_a3d8c"]
 [ext_resource type="Script" uid="uid://drfutgub3j3nu" path="res://Scenes/Player/playerUI.gd" id="3_xpcdj"]
-[ext_resource type="Texture2D" uid="uid://cncfjsggpdmn8" path="res://Assets/Textures/Lock/blinzeln spritesheet.png" id="4_htcer"]
-[ext_resource type="Texture2D" uid="uid://crgffje10i3bo" path="res://Assets/Textures/Lock/idle und hängen spritesheet.png" id="5_dd0ac"]
-[ext_resource type="Texture2D" uid="uid://nw2j63rhoctj" path="res://Assets/Textures/hand/offene_zwischenschritt.png" id="6_0u5uq"]
-[ext_resource type="Texture2D" uid="uid://dy5qha6ghu60f" path="res://Assets/Textures/hand/hand-bro2.png" id="7_jhyir"]
-[ext_resource type="Texture2D" uid="uid://d2n8vjq3bhpue" path="res://Assets/Textures/hand/offene_hand_verpixelt.png" id="7_jlvik"]
-[ext_resource type="Texture2D" uid="uid://36ac1f080osy" path="res://Assets/Textures/hand/mittelfinger.png" id="8_74mp2"]
-[ext_resource type="Texture2D" uid="uid://daushadoxpswy" path="res://Assets/Textures/hand/offene_hand.png" id="9_oikmp"]
+[ext_resource type="Texture2D" uid="uid://c8p2ku86uunkt" path="res://Assets/Textures/hand/blinzeln spritesheet mit stinki finger.png" id="4_mtuoh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvnfx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a3d8c"]
 radius = 0.64861107
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0u5uq"]
-atlas = ExtResource("4_htcer")
+[sub_resource type="AtlasTexture" id="AtlasTexture_htcer"]
+atlas = ExtResource("4_mtuoh")
 region = Rect2(0, 0, 1653, 1754)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jlvik"]
-atlas = ExtResource("4_htcer")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd0ac"]
+atlas = ExtResource("4_mtuoh")
 region = Rect2(1653, 0, 1653, 1754)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gk6dx"]
-atlas = ExtResource("4_htcer")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u5uq"]
+atlas = ExtResource("4_mtuoh")
 region = Rect2(3306, 0, 1653, 1754)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhyir"]
-atlas = ExtResource("4_htcer")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlvik"]
+atlas = ExtResource("4_mtuoh")
 region = Rect2(0, 1754, 1653, 1754)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_74mp2"]
-atlas = ExtResource("5_dd0ac")
-region = Rect2(0, 1754, 1653, 1754)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oikmp"]
-atlas = ExtResource("5_dd0ac")
-region = Rect2(1653, 1754, 1653, 1754)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
-atlas = ExtResource("5_dd0ac")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk6dx"]
+atlas = ExtResource("4_mtuoh")
 region = Rect2(3306, 1754, 1653, 1754)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_htcer"]
-atlas = ExtResource("5_dd0ac")
-region = Rect2(0, 0, 1653, 1754)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtuoh"]
+atlas = ExtResource("4_mtuoh")
+region = Rect2(1653, 1754, 1653, 1754)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g0yx"]
 animations = [{
 "frames": [{
 "duration": 20.0,
+"texture": SubResource("AtlasTexture_htcer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd0ac")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0u5uq")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jlvik")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gk6dx")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_jhyir")
 }],
 "loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 20.0,
-"texture": SubResource("AtlasTexture_74mp2")
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_gk6dx")
 }, {
-"duration": 4.0,
-"texture": SubResource("AtlasTexture_oikmp")
-}, {
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_06tpx")
-}],
-"loop": false,
-"name": &"idle2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 20.0,
-"texture": ExtResource("9_oikmp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_jlvik")
-}],
-"loop": true,
-"name": &"idle_empty",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 20.0,
-"texture": ExtResource("6_0u5uq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_jhyir")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_74mp2")
-}],
-"loop": true,
-"name": &"idle_empty_2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_0u5uq")
-}, {
-"duration": 5.0,
-"texture": ExtResource("7_jlvik")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_mtuoh")
 }],
 "loop": false,
 "name": &"interact",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_htcer")
-}],
-"loop": false,
-"name": &"locking",
 "speed": 5.0
 }]
 
@@ -165,10 +104,10 @@ grow_vertical = 2
 
 [node name="AnimatedSpriteHand" type="AnimatedSprite2D" parent="UI/Hand" unique_id=1265880232]
 unique_name_in_owner = true
-position = Vector2(867, 511)
+position = Vector2(786, 540)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_7g0yx")
-animation = &"idle_empty"
+animation = &"interact"
 autoplay = "idle"
 
 [node name="PauseMenu" type="Control" parent="UI" unique_id=1923941847]
