@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://dsys8c8siaovx" path="res://Assets/Materials/Prototyping/railing_greyboxing.tres" id="17_v3635"]
 [ext_resource type="ArrayMesh" uid="uid://ccf0vcxut171r" path="res://Assets/Models/Environment/Railings/railing_base.obj" id="18_1g1ne"]
 [ext_resource type="PackedScene" uid="uid://cojdx4c45dldn" path="res://Scenes/Environment/architecture_catalogue/pollard.tscn" id="18_xjc64"]
+[ext_resource type="PackedScene" uid="uid://dnomr6f6eefgv" path="res://Scenes/Environment/architecture_catalogue/giant_pillar.tscn" id="19_1g1ne"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hlixk"]
 
@@ -71,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -37)
 [node name="PillarBig" parent="." unique_id=1123230891 instance=ExtResource("6_u074y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -14)
 
-[node name="PillarBig2" parent="." unique_id=1033136188 instance=ExtResource("6_u074y")]
+[node name="PillarBig2" parent="." unique_id=1298971920 instance=ExtResource("6_u074y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5.1550074, 0)
 
 [node name="PillarBigBroken" parent="." unique_id=1810188310 instance=ExtResource("6_hlixk")]
@@ -249,3 +250,6 @@ mesh = ExtResource("18_1g1ne")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -30, 10, -5)
 material_override = ExtResource("17_v3635")
 mesh = ExtResource("18_1g1ne")
+
+[node name="GiantPillar" parent="." unique_id=757511841 instance=ExtResource("19_1g1ne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -56)
