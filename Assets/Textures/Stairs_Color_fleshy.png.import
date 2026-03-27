@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b57qc5r1b4m8f"
-path.s3tc="res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"
+uid="uid://cxm88ptclqawy"
+path.s3tc="res://.godot/imported/Stairs_Color_fleshy.png-fd30fb7ae0653b38412a7ca0d305eaab.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/ProtoTex/Purple/texture_10.png"
-dest_files=["res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"]
+source_file="res://Assets/Textures/Stairs_Color_fleshy.png"
+dest_files=["res://.godot/imported/Stairs_Color_fleshy.png-fd30fb7ae0653b38412a7ca0d305eaab.s3tc.ctex"]
 
 [params]
 
