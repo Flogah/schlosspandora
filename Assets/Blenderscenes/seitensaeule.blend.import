@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://64tosc2ubcka"
-path="res://.godot/imported/Torch.blend-41460d76fdd6510924d4c178216a12cb.scn"
+uid="uid://bni5x67bbjv5c"
+path="res://.godot/imported/seitensaeule.blend-6caa020ff59314aead81775b438c3f0f.scn"
 
 [deps]
 
-source_file="res://Assets/Torch.blend"
-dest_files=["res://.godot/imported/Torch.blend-41460d76fdd6510924d4c178216a12cb.scn"]
+source_file="res://Assets/Blenderscenes/seitensaeule.blend"
+dest_files=["res://.godot/imported/seitensaeule.blend-6caa020ff59314aead81775b438c3f0f.scn"]
 
 [params]
 

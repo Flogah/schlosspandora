@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bvk7ai14p777n"
-valid=false
+path="res://.godot/imported/begehbarer_Darmn.blend-5c001d49e48b1b98c05d7ad4f150ad19.scn"
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/Environment/begehbarer_Darmn.blend"
+dest_files=["res://.godot/imported/begehbarer_Darmn.blend-5c001d49e48b1b98c05d7ad4f150ad19.scn"]
 
 [params]
 

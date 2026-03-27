@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dt3ystdequcgo"
-valid=false
+path="res://.godot/imported/Moria_Hall.blend-f3657dd689c6ad5f9d53e650ddc41b6e.scn"
 
 [deps]
 
 source_file="res://Assets/Moria_Hall.blend"
+dest_files=["res://.godot/imported/Moria_Hall.blend-f3657dd689c6ad5f9d53e650ddc41b6e.scn"]
 
 [params]
 
