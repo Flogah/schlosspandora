@@ -11,6 +11,7 @@ var can_look_around: bool = true
 @export var Sensitivity = 0.005
 
 @onready var head: Node3D = %Head
+@onready var pause_menu: CanvasLayer = %PauseMenu
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -52,3 +53,6 @@ func process_move(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	move_and_slide()
+
+func game_over():
+	pause_menu.show_game_over()

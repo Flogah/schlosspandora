@@ -2,22 +2,34 @@
 
 [ext_resource type="Texture2D" uid="uid://env5kh50q2q3" path="res://Assets/Textures/Monster/ew 2 rechts.png" id="1_bkwd7"]
 [ext_resource type="Script" uid="uid://duh6uohqkce8l" path="res://Scenes/Menu/main_menu.gd" id="1_tself"]
-[ext_resource type="PackedScene" uid="uid://yerf6fxmxqai" path="res://Scenes/PlayerGym/player_gym.tscn" id="2_7jtkx"]
 [ext_resource type="Texture2D" uid="uid://br3h7u8lwn0fc" path="res://Assets/Textures/Monster/bigboy links.png" id="4_vmek6"]
 
-[node name="MainMenu" type="CanvasLayer" unique_id=1111498171]
-script = ExtResource("1_tself")
-starting_scene = ExtResource("2_7jtkx")
-
-[node name="Menu" type="Control" parent="." unique_id=1040069077]
-unique_name_in_owner = true
-visible = false
+[node name="MainMenu" type="Control" unique_id=1157548593]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tself")
+
+[node name="Menu" type="Control" parent="." unique_id=1040069077]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Menu" unique_id=1092250406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39841208, 0.3984121, 0.39841208, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="Menu" unique_id=196015880]
 layout_mode = 1
@@ -77,12 +89,22 @@ texture = ExtResource("1_bkwd7")
 
 [node name="Credits" type="Control" parent="." unique_id=2100008544]
 unique_name_in_owner = true
-layout_mode = 3
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=1348946831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39841208, 0.3984121, 0.39841208, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Credits" unique_id=1414961981]
 position = Vector2(1224, 369)

@@ -1,6 +1,6 @@
-extends CanvasLayer
+extends Control
 
-@export var starting_scene: PackedScene
+const PLAYER_GYM = preload("uid://yerf6fxmxqai")
 
 @onready var button_start: Button = %ButtonStart
 @onready var button_credits: Button = %ButtonCredits
@@ -14,7 +14,7 @@ func _ready() -> void:
 	button_quit.pressed.connect(func(): get_tree().quit())
 	button_credits.pressed.connect(get_credits)
 	button_back.pressed.connect(back_to_menu)
-	button_start.pressed.connect(func(): get_tree().change_scene_to_packed(starting_scene))
+	button_start.pressed.connect(start_game)
 
 func get_credits():
 	menu.hide()
@@ -23,3 +23,6 @@ func get_credits():
 func back_to_menu():
 	credits.hide()
 	menu.show()
+
+func start_game():
+	get_tree().change_scene_to_packed(PLAYER_GYM)
