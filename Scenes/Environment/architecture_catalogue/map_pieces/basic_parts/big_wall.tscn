@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dog767hv2x0ml"]
+
+[ext_resource type="PackedScene" uid="uid://dfefbvlhk1g2r" path="res://Scenes/Environment/architecture_catalogue/wall_long_thin.tscn" id="1_g11rh"]
+
+[node name="BigWall" type="Node3D" unique_id=1231954786]
+
+[node name="WallLongThin" parent="." unique_id=667482571 instance=ExtResource("1_g11rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="WallLongThin2" parent="." unique_id=1456738621 instance=ExtResource("1_g11rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.5)
+
+[node name="WallLongThin3" parent="." unique_id=141806080 instance=ExtResource("1_g11rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -0.5)
+
+[node name="WallLongThin4" parent="." unique_id=2089250096 instance=ExtResource("1_g11rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -0.5)
+
+[node name="WallLongThin5" parent="." unique_id=1994224096 instance=ExtResource("1_g11rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -0.5)
+
+[node name="WallLongThin6" parent="." unique_id=561902020 instance=ExtResource("1_g11rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, -0.5)

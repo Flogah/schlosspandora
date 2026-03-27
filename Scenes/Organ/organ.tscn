@@ -6,8 +6,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgy28"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Organ" type="Node3D" unique_id=752037423 node_paths=PackedStringArray("reste")]
+[node name="Organ" type="Node3D" unique_id=752037423 node_paths=PackedStringArray("organ", "reste")]
 script = ExtResource("1_6rss2")
+organ = NodePath("lung")
 reste = NodePath("Blut")
 
 [node name="Blut" type="Node3D" parent="." unique_id=927781327]

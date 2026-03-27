@@ -3,13 +3,13 @@ class_name Door
 
 signal locked
 
-@onready var door_l: AnimatableBody3D = $Door_L
-@onready var door_r: AnimatableBody3D = $Door_R
-@onready var ia_comp_f: InteractionComponent = $IaCompFront
-@onready var ia_comp_b: InteractionComponent = $IaCompBack
-@onready var lock_f: Node3D = $Locks/LockF
-@onready var lock_b: Node3D = $Locks/LockB
-@onready var locks: Node3D = $Locks
+@onready var door_l: AnimatableBody3D = $D/Door_L
+@onready var door_r: AnimatableBody3D = $D/Door_R
+@onready var ia_comp_f: InteractionComponent = $D/IaCompFront
+@onready var ia_comp_b: InteractionComponent = $D/IaCompBack
+@onready var lock_f: Node3D = $D/Locks/LockF
+@onready var lock_b: Node3D = $D/Locks/LockB
+@onready var locks: Node3D = $D/Locks
 
 var is_locked: bool = false
 var is_closed: bool = true

@@ -1,7 +1,7 @@
 extends Node3D
 class_name Organ
 
-@export var kill_door: Door
+@export var kill_door: Node3D
 
 @export var organ: Node3D
 @export var reste: Node3D
