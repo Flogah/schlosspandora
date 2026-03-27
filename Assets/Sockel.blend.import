@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bixn31w2p8kfv"
-valid=false
+path="res://.godot/imported/Sockel.blend-75fd182104af5fcaa7e415b1ef0a4ef0.scn"
 
 [deps]
 
 source_file="res://Assets/Sockel.blend"
+dest_files=["res://.godot/imported/Sockel.blend-75fd182104af5fcaa7e415b1ef0a4ef0.scn"]
 
 [params]
 
