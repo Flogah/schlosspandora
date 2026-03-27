@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://di8el4qox4kqv"]
 
-[ext_resource type="Material" uid="uid://bhjtmnu4na63" path="res://Assets/Materials/Prototyping/dark_greyboxing.tres" id="1_baxf3"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_d3o4e"]
-size = Vector2(10, 5)
+[ext_resource type="PackedScene" path="res://Scenes/Environment/architecture_catalogue/platform_long.tscn" id="1_bntod"]
 
 [node name="HallwayNarrowFloor" type="Node3D" unique_id=146568559]
 
-[node name="FloorLong2" type="MeshInstance3D" parent="." unique_id=462738075]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2.5)
-material_override = ExtResource("1_baxf3")
-mesh = SubResource("PlaneMesh_d3o4e")
+[node name="PlatformLong" parent="." unique_id=708031375 instance=ExtResource("1_bntod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
