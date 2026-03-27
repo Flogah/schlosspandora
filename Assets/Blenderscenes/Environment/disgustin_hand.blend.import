@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://i1rcig5xfn2o"
-path="res://.godot/imported/seitensaeule.blend-1e5711e1feb50f312e883ab8b121c7bf.scn"
+uid="uid://do1nrxrtltx1n"
+path="res://.godot/imported/disgustin_hand.blend-f34c3d44741a7105578990c9cb707237.scn"
 
 [deps]
 
-source_file="res://Assets/Blenderscenes/Environment/seitensaeule.blend"
-dest_files=["res://.godot/imported/seitensaeule.blend-1e5711e1feb50f312e883ab8b121c7bf.scn"]
+source_file="res://Assets/Blenderscenes/Environment/disgustin_hand.blend"
+dest_files=["res://.godot/imported/disgustin_hand.blend-f34c3d44741a7105578990c9cb707237.scn"]
 
 [params]
 
