@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ch85mu87by8up"]
+
+[ext_resource type="Material" uid="uid://bhjtmnu4na63" path="res://Assets/Materials/Prototyping/dark_greyboxing.tres" id="1_ig605"]
+[ext_resource type="ArrayMesh" uid="uid://ce8y7hleirks7" path="res://Assets/Models/Environment/Pillars/Base_Big_Pyr_Square.obj" id="2_5cad3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ig605"]
+data = PackedVector3Array(-1.7326, 4.95, -1.7326, 1.7325, 4.95, -1.7326, -1.7326, 4.95, 1.7325, -1.7326, 4.95, 1.7325, 1.7325, 4.95, -1.7326, 1.7325, 4.95, 1.7325, 1.7325, 4.95, 1.7325, 4.95, 0, 4.95, -1.7326, 4.95, 1.7325, -1.7326, 4.95, 1.7325, 4.95, 0, 4.95, -4.95, 0, 4.95, -1.7326, 4.95, 1.7325, -4.95, 0, 4.95, -1.7326, 4.95, -1.7326, -1.7326, 4.95, -1.7326, -4.95, 0, 4.95, -4.95, 0, -4.95, 4.95, 0, -4.95, -4.95, 0, -4.95, 4.95, 0, 4.95, 4.95, 0, 4.95, -4.95, 0, -4.95, -4.95, 0, 4.95, 1.7325, 4.95, -1.7326, 4.95, 0, -4.95, 1.7325, 4.95, 1.7325, 1.7325, 4.95, 1.7325, 4.95, 0, -4.95, 4.95, 0, 4.95, -1.7326, 4.95, -1.7326, -4.95, 0, -4.95, 1.7325, 4.95, -1.7326, 1.7325, 4.95, -1.7326, -4.95, 0, -4.95, 4.95, 0, -4.95)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1958196249]
+
+[node name="BaseBigPyrSquare" type="MeshInstance3D" parent="." unique_id=127142029]
+material_override = ExtResource("1_ig605")
+mesh = ExtResource("2_5cad3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=270586133]
+shape = SubResource("ConcavePolygonShape3D_ig605")

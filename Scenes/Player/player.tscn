@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://n2l08do6t6rl" path="res://Scenes/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="PackedScene" uid="uid://b8e558yv6w0sf" path="res://Scenes/Player/player_hands.tscn" id="2_a3d8c"]
+[ext_resource type="Script" uid="uid://drfutgub3j3nu" path="res://Scenes/Player/pause_menu.gd" id="3_xpcdj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvnfx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a3d8c"]
 radius = 0.64861107
 
-[node name="Player" type="CharacterBody3D" unique_id=1448344412]
+[node name="Player" type="CharacterBody3D" unique_id=1448344412 groups=["Player"]]
+collision_layer = 3
 script = ExtResource("1_uvnfx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1738973053]
@@ -16,6 +18,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0042169094, 0)
 shape = SubResource("CapsuleShape3D_uvnfx")
 
 [node name="Head" type="Node3D" parent="." unique_id=1971387389]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512259, -0.26840156)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=191284012]
@@ -27,3 +30,114 @@ fov = 90.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerHands" unique_id=186217914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27528107, -0.2837209)
 shape = SubResource("SphereShape3D_a3d8c")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1588406836]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("3_xpcdj")
+
+[node name="Pause" type="Control" parent="PauseMenu" unique_id=1923941847]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/Pause" unique_id=89043414]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Pause/PanelContainer" unique_id=1900210855]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ButtonExit" type="Button" parent="PauseMenu/Pause/PanelContainer/MarginContainer" unique_id=999098887]
+unique_name_in_owner = true
+layout_mode = 2
+text = "EXIT"
+
+[node name="GameOver" type="Control" parent="PauseMenu" unique_id=1535277336]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/GameOver" unique_id=1074413081]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39841208, 0.3984121, 0.39841208, 1)
+
+[node name="PanelContainer2" type="PanelContainer" parent="PauseMenu/GameOver" unique_id=10688704]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -455.0
+offset_top = -236.0
+offset_right = -253.0
+offset_bottom = -143.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/GameOver/PanelContainer2" unique_id=58386274]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ButtonGOBack" type="Button" parent="PauseMenu/GameOver/PanelContainer2/MarginContainer" unique_id=1419765981]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BACK"
+
+[node name="Label" type="Label" parent="PauseMenu/GameOver" unique_id=1470012515]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.5
+offset_top = -49.5
+offset_right = 258.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 72
+text = "YOU ARE DEAD"
+
+[node name="Label2" type="Label" parent="PauseMenu/GameOver" unique_id=223398667]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.5
+offset_top = 45.0
+offset_right = 258.5
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "You did not save the world."
+horizontal_alignment = 1

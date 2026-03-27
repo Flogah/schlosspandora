@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://env5kh50q2q3" path="res://Assets/Textures/Monster/ew 2 rechts.png" id="4_8veg5"]
 [ext_resource type="Script" uid="uid://qock7a2nkgvi" path="res://Scripts/StateMachine/EnemyAI/Idle.gd" id="4_wem1j"]
 [ext_resource type="Texture2D" uid="uid://bpk2erxc70hrb" path="res://Assets/Textures/Monster/ew 2 hinten.png" id="5_yw4gv"]
+[ext_resource type="Script" uid="uid://dg1m1xlsyewxw" path="res://Scripts/StateMachine/EnemyAI/Chasing.gd" id="9_hr3cx"]
+[ext_resource type="Script" uid="uid://b1dtmuk1ivihl" path="res://Scripts/StateMachine/EnemyAI/Devouring.gd" id="10_b5rfd"]
+[ext_resource type="Script" uid="uid://b2hx6rbtvj7t5" path="res://Scripts/StateMachine/EnemyAI/Investigating.gd" id="11_8veg5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iyhh7"]
 height = 2.5
@@ -22,8 +25,16 @@ albedo_color = Color(0.9999998, 0.23990926, 0.09094281, 1)
 material = SubResource("StandardMaterial3D_40lkt")
 size = Vector3(0.3, 0.6, 0.1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8veg5"]
+radius = 0.6616211
+height = 1.4975586
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8veg5"]
+radius = 3.0
+
 [node name="Monster" type="CharacterBody3D" unique_id=1405422179]
 script = ExtResource("1_4bei1")
+chase_speed = 5.0
 sprites = Dictionary[int, Texture2D]({
 0: ExtResource("2_hr3cx"),
 1: ExtResource("3_b5rfd"),
@@ -35,7 +46,6 @@ sprites = Dictionary[int, Texture2D]({
 unique_name_in_owner = true
 path_desired_distance = 0.2
 path_height_offset = 0.25
-debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=109380209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -45,19 +55,33 @@ shape = SubResource("CapsuleShape3D_iyhh7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningArea3D" unique_id=2135233024]
 shape = SubResource("SphereShape3D_5kmi8")
+debug_fill = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=2023991083 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("2_5kmi8")
 initial_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://dtdg04bielo83"
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=741013926]
+script = ExtResource("4_wem1j")
+metadata/_custom_type_script = "uid://qock7a2nkgvi"
 
 [node name="WanderingState" type="Node" parent="StateMachine" unique_id=614336248]
 script = ExtResource("3_40lkt")
 metadata/_custom_type_script = "uid://cx5a04pgbppbr"
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=741013926]
-script = ExtResource("4_wem1j")
-metadata/_custom_type_script = "uid://qock7a2nkgvi"
+[node name="ChasingState" type="Node" parent="StateMachine" unique_id=581412549]
+script = ExtResource("9_hr3cx")
+metadata/_custom_type_script = "uid://dg1m1xlsyewxw"
+
+[node name="DevouringState" type="Node" parent="StateMachine" unique_id=1488255686]
+script = ExtResource("10_b5rfd")
+metadata/_custom_type_script = "uid://b1dtmuk1ivihl"
+
+[node name="InvestigatingState" type="Node" parent="StateMachine" unique_id=415020885]
+script = ExtResource("11_8veg5")
+metadata/_custom_type_script = "uid://b2hx6rbtvj7t5"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1173925126]
 unique_name_in_owner = true
@@ -68,5 +92,33 @@ texture = ExtResource("2_hr3cx")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=903462301]
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 5.788327e-08, 0.10816711, -0.6621074)
 mesh = SubResource("PrismMesh_40lkt")
+
+[node name="Eye" type="RayCast3D" parent="." unique_id=392665993]
+unique_name_in_owner = true
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.25, 0)
+target_position = Vector3(0, 0, -15)
+
+[node name="VisionCone" type="Area3D" parent="." unique_id=587972701]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.25, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="VisionCone" unique_id=1427283894]
+transform = Transform3D(-4.3711384e-07, 10, -4.3711393e-07, -10, -4.371139e-07, -4.371139e-07, -4.3711393e-07, 4.371139e-07, 10, 7.487793, 1.1920929e-07, -1.0981208e-07)
+shape = SubResource("CapsuleShape3D_8veg5")
+
+[node name="TimerVision" type="Timer" parent="." unique_id=1342698116]
+unique_name_in_owner = true
+wait_time = 0.25
+autostart = true
+
+[node name="AttackArea" type="Area3D" parent="." unique_id=2077867094]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" unique_id=1902795055]
+shape = SubResource("SphereShape3D_8veg5")
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="StateMachine/WanderingState" method="reached"]

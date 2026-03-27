@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Player
 
 @export var SPEED = 2.0
 var stand_height = 2.0
@@ -7,15 +7,17 @@ var crouch_height = 0.5
 var cam_stand_height = 0.512
 var cam_crouch_height = 0.2
 var crouching = false
-@export var Sensitivity = 0.001
+var can_look_around: bool = true
+@export var Sensitivity = 0.005
 
-@onready var head = $Head
+@onready var head: Node3D = %Head
+@onready var pause_menu: CanvasLayer = %PauseMenu
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and can_look_around:
 		rotate_y(-event.relative.x * Sensitivity)
 		head.rotate_x(-event.relative.y * Sensitivity)
 
@@ -51,3 +53,6 @@ func process_move(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	move_and_slide()
+
+func game_over():
+	pause_menu.show_game_over()
