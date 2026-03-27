@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ce70vtswx4qea"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Environment/architecture_catalogue/platform_long_wide.tscn" id="1_w7x25"]
+
+[node name="PlatformVeryBig" type="Node3D" unique_id=1230874265]
+
+[node name="PlatformLong3" parent="." unique_id=24122707 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="PlatformLong4" parent="." unique_id=357225301 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="PlatformLong5" parent="." unique_id=1761389550 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="PlatformLong6" parent="." unique_id=274145021 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
+
+[node name="PlatformLong7" parent="." unique_id=346590906 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+
+[node name="PlatformLong8" parent="." unique_id=1439342788 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+
+[node name="PlatformLong9" parent="." unique_id=1740308142 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="PlatformLong10" parent="." unique_id=5579895 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+
+[node name="PlatformLong11" parent="." unique_id=637483732 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30)
+
+[node name="PlatformLong12" parent="." unique_id=1123657472 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -40)
+
+[node name="PlatformLong13" parent="." unique_id=623934522 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)
+
+[node name="PlatformLong14" parent="." unique_id=2119156699 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -40)
+
+[node name="PlatformLong15" parent="." unique_id=598644437 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -10)
+
+[node name="PlatformLong16" parent="." unique_id=506103451 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
+
+[node name="PlatformLong17" parent="." unique_id=1717656084 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -30)
+
+[node name="PlatformLong18" parent="." unique_id=965674650 instance=ExtResource("1_w7x25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -40)

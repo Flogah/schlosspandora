@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dpo775aimvet"]
+
+[ext_resource type="PackedScene" uid="uid://c73xuwti5kkno" path="res://Assets/Blenderscenes/Organs/lung.glb" id="1_xf60t"]
+
+[node name="lung" unique_id=1212075060 instance=ExtResource("1_xf60t")]
+transform = Transform3D(0.805, 0, 0, 0, 0.805, 0, 0, 0, 0.805, 0, 0, 0)
+
+[node name="lunge_fluegel" parent="." index="0" unique_id=1905155987]
+"blend_shapes/Key 2" = 0.34876046
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=967391169]
+autoplay = &"Lung_breathing"
+speed_scale = 0.328

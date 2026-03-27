@@ -1,8 +1,10 @@
 extends Area3D
 class_name PlayerHands
 
-var closest_interactable: InteractionComponent
+signal interact
+signal locking
 
+var closest_interactable: InteractionComponent
 var multiple_interactables: bool = false
 
 func _ready() -> void:
@@ -27,9 +29,11 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("interact"):
 			print("try open")
 			closest_interactable.interact(false)
+			interact.emit()
 		if Input.is_action_just_pressed("lock"):
 			print("try lock")
 			closest_interactable.interact(true)
+			locking.emit()
 
 func _on_area_entered(area: Area3D) -> void:
 	if closest_interactable == null:

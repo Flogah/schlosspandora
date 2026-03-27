@@ -2,5 +2,9 @@ extends State
 class_name DevouringState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	print("Entering Devouring State")
-	# makes this some kind of game over state
+	devour()
+
+func devour():
+	print("GAME OVER")
+	var player: Player = get_tree().get_first_node_in_group("Player")
+	player.game_over()

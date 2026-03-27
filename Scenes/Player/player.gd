@@ -10,10 +10,14 @@ var crouching = false
 var can_look_around: bool = true
 @export var Sensitivity = 0.005
 
-@onready var head = $Head
+@onready var head: Node3D = %Head
+@onready var ui: CanvasLayer = %UI
+@onready var player_hands: PlayerHands = %PlayerHands
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player_hands.interact.connect(func(): ui.interacting())
+	player_hands.locking.connect(func(): ui.locking())
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and can_look_around:
@@ -52,3 +56,6 @@ func process_move(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	move_and_slide()
+
+func game_over():
+	ui.show_game_over()

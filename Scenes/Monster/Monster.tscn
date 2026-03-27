@@ -25,6 +25,13 @@ albedo_color = Color(0.9999998, 0.23990926, 0.09094281, 1)
 material = SubResource("StandardMaterial3D_40lkt")
 size = Vector3(0.3, 0.6, 0.1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8veg5"]
+radius = 0.6616211
+height = 1.4975586
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8veg5"]
+radius = 3.0
+
 [node name="Monster" type="CharacterBody3D" unique_id=1405422179]
 script = ExtResource("1_4bei1")
 chase_speed = 5.0
@@ -48,6 +55,7 @@ shape = SubResource("CapsuleShape3D_iyhh7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningArea3D" unique_id=2135233024]
 shape = SubResource("SphereShape3D_5kmi8")
+debug_fill = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=2023991083 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
@@ -85,92 +93,32 @@ texture = ExtResource("2_hr3cx")
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 5.788327e-08, 0.10816711, -0.6621074)
 mesh = SubResource("PrismMesh_40lkt")
 
-[node name="VisionCone" type="Node3D" parent="." unique_id=1318488920]
+[node name="Eye" type="RayCast3D" parent="." unique_id=392665993]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64483, 0)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.25, 0)
+target_position = Vector3(0, 0, -15)
 
-[node name="RayCast3D" type="RayCast3D" parent="VisionCone" unique_id=1986673416]
-transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, 0, -4.371139e-08, -1, 0.70710677, 0.70710677, -3.090862e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
+[node name="VisionCone" type="Area3D" parent="." unique_id=587972701]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.25, 0)
+collision_layer = 0
+collision_mask = 2
 
-[node name="RayCast3D2" type="RayCast3D" parent="VisionCone" unique_id=1966147272]
-transform = Transform3D(0.7071067, 0.7071068, -3.0908613e-08, 0, -4.371138e-08, -1, -0.7071068, 0.7071067, -3.090862e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="VisionCone" unique_id=1427283894]
+transform = Transform3D(-4.3711384e-07, 10, -4.3711393e-07, -10, -4.371139e-07, -4.371139e-07, -4.3711393e-07, 4.371139e-07, 10, 7.487793, 1.1920929e-07, -1.0981208e-07)
+shape = SubResource("CapsuleShape3D_8veg5")
 
-[node name="RayCast3D3" type="RayCast3D" parent="VisionCone" unique_id=392665993]
-transform = Transform3D(0.8660253, 0.50000006, -2.1855692e-08, 0, -4.371138e-08, -1, -0.50000006, 0.8660253, -3.785517e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
+[node name="TimerVision" type="Timer" parent="." unique_id=1342698116]
+unique_name_in_owner = true
+wait_time = 0.25
+autostart = true
 
-[node name="RayCast3D4" type="RayCast3D" parent="VisionCone" unique_id=282608269]
-transform = Transform3D(0.9659259, 0.25881916, -1.13133405e-08, 2.3798704e-16, -4.3711385e-08, -1, -0.25881916, 0.9659259, -4.222196e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
+[node name="AttackArea" type="Area3D" parent="." unique_id=2077867094]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
 
-[node name="RayCast3D5" type="RayCast3D" parent="VisionCone" unique_id=52846341]
-transform = Transform3D(1, 1.1920929e-07, 0, 2.3798704e-16, -4.3711385e-08, -1, -1.1920929e-07, 1, -4.3711385e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D6" type="RayCast3D" parent="VisionCone" unique_id=407481705]
-transform = Transform3D(0.9659259, -0.25881892, 1.1313339e-08, 2.3798704e-16, -4.3711385e-08, -1, 0.25881892, 0.9659259, -4.2221956e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D7" type="RayCast3D" parent="VisionCone" unique_id=1787460747]
-transform = Transform3D(0.86602545, -0.49999988, 2.185569e-08, 2.3798704e-16, -4.3711385e-08, -1, 0.49999988, 0.86602545, -3.7855166e-08, 0, 0, 0)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D8" type="RayCast3D" parent="VisionCone" unique_id=1898337573]
-transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, -0.1830127, -0.18301274, -0.9659258, 0.68301266, 0.68301266, -0.25881907, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D9" type="RayCast3D" parent="VisionCone" unique_id=470433123]
-transform = Transform3D(0.7071067, 0.7071068, -3.0908616e-08, 0.18301271, -0.18301272, -0.9659258, -0.6830127, 0.6830126, -0.25881907, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D10" type="RayCast3D" parent="VisionCone" unique_id=2124086103]
-transform = Transform3D(0.86602545, 0.5000001, -2.1855698e-08, 0.12940954, -0.22414389, -0.9659258, -0.48296306, 0.8365163, -0.2588191, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D11" type="RayCast3D" parent="VisionCone" unique_id=1027955209]
-transform = Transform3D(0.9659259, 0.25881916, -1.131334e-08, 0.06698733, -0.25000003, -0.9659258, -0.25000012, 0.9330127, -0.25881907, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D12" type="RayCast3D" parent="VisionCone" unique_id=2090639681]
-transform = Transform3D(1, 1.1920929e-07, 0, 3.0853634e-08, -0.25881907, -0.9659258, -1.1514733e-07, 0.9659258, -0.25881907, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D13" type="RayCast3D" parent="VisionCone" unique_id=1159337532]
-transform = Transform3D(0.9659259, -0.25881892, 1.1313338e-08, -0.06698727, -0.25000003, -0.9659258, 0.24999988, 0.9330127, -0.25881907, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D14" type="RayCast3D" parent="VisionCone" unique_id=1954126706]
-transform = Transform3D(0.86602557, -0.49999997, 2.1855694e-08, -0.12940949, -0.22414392, -0.9659258, 0.48296288, 0.83651644, -0.2588191, 0, 0, 3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D15" type="RayCast3D" parent="VisionCone" unique_id=1231212776]
-transform = Transform3D(0.7071067, -0.7071067, 4.742382e-08, 0.1830127, 0.18301266, -0.9659258, 0.6830126, 0.6830126, 0.258819, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D16" type="RayCast3D" parent="VisionCone" unique_id=685265130]
-transform = Transform3D(0.7071067, 0.7071068, -3.9710404e-08, -0.18301272, 0.18301262, -0.9659258, -0.6830127, 0.68301255, 0.258819, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D17" type="RayCast3D" parent="VisionCone" unique_id=940214975]
-transform = Transform3D(0.86602545, 0.5000001, -2.2121268e-08, -0.12940957, 0.22414383, -0.9659258, -0.4829631, 0.83651626, 0.25881898, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D18" type="RayCast3D" parent="VisionCone" unique_id=1429113250]
-transform = Transform3D(0.9659259, 0.25881916, -1.1573266e-08, -0.066987336, 0.24999999, -0.9659258, -0.25000015, 0.9330127, 0.258819, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D19" type="RayCast3D" parent="VisionCone" unique_id=1496409724]
-transform = Transform3D(1, 1.1920929e-07, 0, -3.085363e-08, 0.258819, -0.9659258, -1.1514732e-07, 0.9659258, 0.258819, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D20" type="RayCast3D" parent="VisionCone" unique_id=1537458861]
-transform = Transform3D(0.9659259, -0.25881892, 2.2626677e-08, 0.06698727, 0.24999999, -0.9659258, 0.24999988, 0.9330127, 0.258819, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
-
-[node name="RayCast3D21" type="RayCast3D" parent="VisionCone" unique_id=1671210478]
-transform = Transform3D(0.86602557, -0.49999997, 2.2121267e-08, 0.12940952, 0.22414389, -0.9659258, 0.48296288, 0.83651644, 0.25881898, 0, 0, -3.0853634e-08)
-target_position = Vector3(0, -15, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" unique_id=1902795055]
+shape = SubResource("SphereShape3D_8veg5")
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="StateMachine/WanderingState" method="reached"]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bk4hmwfbl8h2s"]
+
+[ext_resource type="PackedScene" uid="uid://cl38b0njelwa2" path="res://Scenes/Environment/architecture_catalogue/base_big_round.tscn" id="1_o75jo"]
+[ext_resource type="PackedScene" uid="uid://bu8lalc81x5d2" path="res://Scenes/Environment/architecture_catalogue/pillar_big.tscn" id="2_4d4a1"]
+[ext_resource type="PackedScene" uid="uid://dwa2yfhyir7sl" path="res://Scenes/Environment/architecture_catalogue/pillar_side.tscn" id="3_bm3tg"]
+[ext_resource type="PackedScene" uid="uid://urh7cdsrolhl" path="res://Scenes/Environment/architecture_catalogue/pillar_side_capstone_tall.tscn" id="4_rq8ee"]
+
+[node name="PointyPillar" type="Node3D" unique_id=1454183656]
+
+[node name="BaseBigRound2" parent="." unique_id=1093358226 instance=ExtResource("1_o75jo")]
+
+[node name="PillarBig2" parent="." unique_id=1033136188 instance=ExtResource("2_4d4a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="PillarSide2" parent="." unique_id=1228128047 instance=ExtResource("3_bm3tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
+
+[node name="PillarSide3" parent="." unique_id=164393761 instance=ExtResource("3_bm3tg")]
+transform = Transform3D(-5.960464e-08, 2.185569e-08, 0.9999999, -5.856213e-09, 1, -2.185569e-08, -0.9999999, -5.8562164e-09, -5.960464e-08, 0, 5, -1)
+
+[node name="PillarSide4" parent="." unique_id=1230256836 instance=ExtResource("3_bm3tg")]
+transform = Transform3D(-0.9999999, -5.8562177e-09, -1.03316026e-07, -5.8562133e-09, 1, -2.1855689e-08, 1.03316026e-07, -2.1855689e-08, -0.9999999, -1, 5, 0)
+
+[node name="PillarSide5" parent="." unique_id=2068115409 instance=ExtResource("3_bm3tg")]
+transform = Transform3D(1.4702742e-07, -2.1855687e-08, -0.9999999, -5.8562137e-09, 1, -2.1855687e-08, 0.9999999, 5.856219e-09, 1.4702742e-07, 0, 5, 1)
+
+[node name="PillarSideCapstoneTall2" parent="." unique_id=45196277 instance=ExtResource("4_rq8ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 15, 0)
+
+[node name="PillarSideCapstoneTall3" parent="." unique_id=1500013342 instance=ExtResource("4_rq8ee")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 15, 0)
