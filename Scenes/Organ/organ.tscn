@@ -1,18 +1,14 @@
 [gd_scene format=3 uid="uid://dq8g0iq7bp1hn"]
 
 [ext_resource type="Script" uid="uid://stgo2jkmv2ex" path="res://Scenes/Organ/organ.gd" id="1_6rss2"]
+[ext_resource type="PackedScene" uid="uid://dpo775aimvet" path="res://Scenes/Organ/lung.tscn" id="2_b5btd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgy28"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Organ" type="Node3D" unique_id=752037423 node_paths=PackedStringArray("organ", "reste")]
+[node name="Organ" type="Node3D" unique_id=752037423 node_paths=PackedStringArray("reste")]
 script = ExtResource("1_6rss2")
-organ = NodePath("Organ")
 reste = NodePath("Blut")
-
-[node name="Organ" type="CSGBox3D" parent="." unique_id=2100749504]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5121979, 0)
-use_collision = true
 
 [node name="Blut" type="Node3D" parent="." unique_id=927781327]
 
@@ -33,3 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.372868, 0.05366218, 0.4509
 radius = 1.275
 height = 0.088378906
 material = SubResource("StandardMaterial3D_dgy28")
+
+[node name="lung" parent="." unique_id=1212075060 instance=ExtResource("2_b5btd")]
+transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, 0, 1.43, 0.16)
