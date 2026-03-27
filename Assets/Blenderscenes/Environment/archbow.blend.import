@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8y5bra1sowhm"
-path="res://.godot/imported/archbow.blend-3547e2548f3274e5a19f0f6bcca3093c.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/Environment/archbow.blend"
-dest_files=["res://.godot/imported/archbow.blend-3547e2548f3274e5a19f0f6bcca3093c.scn"]
 
 [params]
 

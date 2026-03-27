@@ -46,9 +46,6 @@ size = Vector3(1.5, 0.5, 1)
 
 [node name="PlayerGym" type="Node3D" unique_id=1402596968]
 
-[node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_np5y3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3087177, 0.016820967, -8.169556)
-
 [node name="env" type="NavigationRegion3D" parent="." unique_id=118978587]
 navigation_mesh = ExtResource("2_0m8kv")
 
@@ -155,5 +152,5 @@ kill_door = NodePath("../env/Door")
 [node name="Monster" parent="Enemies" unique_id=1405422179 instance=ExtResource("7_2kofv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.385416, 9.536743e-07, 6.568405)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1174734990]
-transform = Transform3D(1, 0, 0, 0, 0.107825875, 0.99416983, 0, -0.99416983, 0.107825875, -1.9073486e-06, 12.812554, 1.6449807)
+[node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_np5y3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0922806, 1.0000005, -11.775709)

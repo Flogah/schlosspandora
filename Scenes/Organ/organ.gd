@@ -1,7 +1,7 @@
 extends Node3D
 class_name Organ
 
-@export var kill_door: Door
+@export var kill_door: Node3D
 
 @export var organ: Node3D
 @export var reste: Node3D
@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 		kill_door = null
 
 func die() -> void:
-	reste.visible = true
-	organ.visible = false
+	if reste and organ:
+		reste.visible = true
+		organ.visible = false
 	
 	

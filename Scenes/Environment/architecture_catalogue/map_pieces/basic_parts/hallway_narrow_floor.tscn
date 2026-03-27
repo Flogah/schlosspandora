@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://di8el4qox4kqv"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Environment/architecture_catalogue/platform_long.tscn" id="1_bntod"]
+
+[node name="HallwayNarrowFloor" type="Node3D" unique_id=146568559]
+
+[node name="PlatformLong" parent="." unique_id=708031375 instance=ExtResource("1_bntod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
