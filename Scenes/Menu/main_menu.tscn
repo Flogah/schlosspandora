@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://env5kh50q2q3" path="res://Assets/Textures/Monster/ew 2 rechts.png" id="1_bkwd7"]
 [ext_resource type="Script" uid="uid://duh6uohqkce8l" path="res://Scenes/Menu/main_menu.gd" id="1_tself"]
+[ext_resource type="Texture2D" uid="uid://cgdh3qtk5nq08" path="res://Assets/Textures/menue rahmen/rahmen für menue.png" id="3_vmek6"]
 [ext_resource type="Texture2D" uid="uid://br3h7u8lwn0fc" path="res://Assets/Textures/Monster/bigboy links.png" id="4_vmek6"]
+[ext_resource type="Texture2D" uid="uid://bru3pimf4ukjm" path="res://Assets/Textures/menue rahmen/rahmen für credits.png" id="5_ab7fb"]
 
 [node name="MainMenu" type="Control" unique_id=1157548593]
 layout_mode = 3
@@ -23,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Menu" unique_id=1092250406]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +34,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.39841208, 0.3984121, 0.39841208, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="Menu" unique_id=751380957]
+visible = false
+position = Vector2(336, 153)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_bkwd7")
+
+[node name="TextureRect" type="TextureRect" parent="Menu" unique_id=686581488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vmek6")
+expand_mode = 2
+
 [node name="PanelContainer" type="PanelContainer" parent="Menu" unique_id=196015880]
 layout_mode = 1
 anchors_preset = 3
@@ -38,10 +57,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -485.0
-offset_top = -393.0
-offset_right = -141.0
-offset_bottom = -129.0
+offset_left = -478.0
+offset_top = -409.0
+offset_right = -134.0
+offset_bottom = -145.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 4
@@ -82,11 +101,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
-[node name="Sprite2D" type="Sprite2D" parent="Menu" unique_id=751380957]
-position = Vector2(336, 153)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_bkwd7")
-
 [node name="Credits" type="Control" parent="." unique_id=2100008544]
 unique_name_in_owner = true
 visible = false
@@ -110,6 +124,17 @@ color = Color(0.39841208, 0.3984121, 0.39841208, 1)
 position = Vector2(1224, 369)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_vmek6")
+
+[node name="TextureRect" type="TextureRect" parent="Credits" unique_id=656622969]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ab7fb")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Credits" unique_id=48701765]
 layout_mode = 1
@@ -139,7 +164,7 @@ theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 200
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Credits/MarginContainer" unique_id=1999397198]
-custom_minimum_size = Vector2(800, 0)
+custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
@@ -159,7 +184,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer1/MarginContainer/VBoxContainer" unique_id=81257315]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "NAME NAME"
+text = "Florian Gahler"
 
 [node name="HSeparator" type="HSeparator" parent="Credits/MarginContainer/HFlowContainer/PanelContainer1/MarginContainer/VBoxContainer" unique_id=1254484556]
 layout_mode = 2
@@ -168,7 +193,7 @@ theme_override_constants/separation = 2
 [node name="Label2" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer1/MarginContainer/VBoxContainer" unique_id=654520302]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "TITLE OF ROLE"
+text = "AI Engineer & Menü Design"
 
 [node name="PanelContainer2" type="PanelContainer" parent="Credits/MarginContainer/HFlowContainer" unique_id=806046358]
 layout_mode = 2
@@ -186,7 +211,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=167745741]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "NAME NAME"
+text = "Marco Schaffer"
 
 [node name="HSeparator" type="HSeparator" parent="Credits/MarginContainer/HFlowContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1594147914]
 layout_mode = 2
@@ -195,7 +220,7 @@ theme_override_constants/separation = 2
 [node name="Label2" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1656501457]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "TITLE OF ROLE"
+text = "Programming & Level Design"
 
 [node name="PanelContainer3" type="PanelContainer" parent="Credits/MarginContainer/HFlowContainer" unique_id=1381995250]
 layout_mode = 2
@@ -213,7 +238,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer3/MarginContainer/VBoxContainer" unique_id=725235519]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "NAME NAME"
+text = "Ludwig Domberger"
 
 [node name="HSeparator" type="HSeparator" parent="Credits/MarginContainer/HFlowContainer/PanelContainer3/MarginContainer/VBoxContainer" unique_id=1198357235]
 layout_mode = 2
@@ -222,7 +247,7 @@ theme_override_constants/separation = 2
 [node name="Label2" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer3/MarginContainer/VBoxContainer" unique_id=1393244177]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "TITLE OF ROLE"
+text = "Zahnschmerz & Interaction Design"
 
 [node name="PanelContainer4" type="PanelContainer" parent="Credits/MarginContainer/HFlowContainer" unique_id=97824431]
 layout_mode = 2
@@ -240,7 +265,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer4/MarginContainer/VBoxContainer" unique_id=1334089086]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "NAME NAME"
+text = "Svea Friz"
 
 [node name="HSeparator" type="HSeparator" parent="Credits/MarginContainer/HFlowContainer/PanelContainer4/MarginContainer/VBoxContainer" unique_id=126635839]
 layout_mode = 2
@@ -249,7 +274,7 @@ theme_override_constants/separation = 2
 [node name="Label2" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer4/MarginContainer/VBoxContainer" unique_id=642408945]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "TITLE OF ROLE"
+text = "3D Hände & Organ Design"
 
 [node name="PanelContainer5" type="PanelContainer" parent="Credits/MarginContainer/HFlowContainer" unique_id=1046804439]
 layout_mode = 2
@@ -267,7 +292,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer5/MarginContainer/VBoxContainer" unique_id=1793435922]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "NAME NAME"
+text = "Anna Lux"
 
 [node name="HSeparator" type="HSeparator" parent="Credits/MarginContainer/HFlowContainer/PanelContainer5/MarginContainer/VBoxContainer" unique_id=1413874231]
 layout_mode = 2
@@ -276,7 +301,7 @@ theme_override_constants/separation = 2
 [node name="Label2" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer5/MarginContainer/VBoxContainer" unique_id=1323819049]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "TITLE OF ROLE"
+text = "Monster Design"
 
 [node name="PanelContainer6" type="PanelContainer" parent="Credits/MarginContainer/HFlowContainer" unique_id=1385627937]
 layout_mode = 2
@@ -294,7 +319,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer6/MarginContainer/VBoxContainer" unique_id=1570055695]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "NAME NAME"
+text = "Tomas Christmann"
 
 [node name="HSeparator" type="HSeparator" parent="Credits/MarginContainer/HFlowContainer/PanelContainer6/MarginContainer/VBoxContainer" unique_id=161844811]
 layout_mode = 2
@@ -303,7 +328,7 @@ theme_override_constants/separation = 2
 [node name="Label2" type="Label" parent="Credits/MarginContainer/HFlowContainer/PanelContainer6/MarginContainer/VBoxContainer" unique_id=1373542513]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "TITLE OF ROLE"
+text = "Tobsucht Gelbmann Design"
 
 [node name="PanelContainer2" type="PanelContainer" parent="Credits" unique_id=138872406]
 layout_mode = 1
@@ -312,9 +337,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -455.0
+offset_left = -364.0
 offset_top = -236.0
-offset_right = -253.0
+offset_right = -162.0
 offset_bottom = -143.0
 grow_horizontal = 0
 grow_vertical = 0
