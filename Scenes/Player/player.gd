@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-@export var SPEED = 2.0
+@export var SPEED = 20.0
 var stand_height = 2.0
 var crouch_height = 0.5
 var cam_stand_height = 0.512
