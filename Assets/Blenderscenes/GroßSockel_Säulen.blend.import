@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cgr3loec5edky"
-valid=false
+path="res://.godot/imported/GroßSockel_Säulen.blend-14e726e85768bf8b00fbea5efb244821.scn"
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/GroßSockel_Säulen.blend"
+dest_files=["res://.godot/imported/GroßSockel_Säulen.blend-14e726e85768bf8b00fbea5efb244821.scn"]
 
 [params]
 
