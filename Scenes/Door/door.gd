@@ -10,10 +10,14 @@ signal locked
 @onready var lock_f: Node3D = $D/Locks/LockF
 @onready var lock_b: Node3D = $D/Locks/LockB
 @onready var locks: Node3D = $D/Locks
+@onready var audio_door: AudioStreamPlayer3D = $AudioDoor
+@onready var audio_lock: AudioStreamPlayer3D = $AudioLock
+
 
 var is_locked: bool = false
 var is_closed: bool = true
 var lock_side_front: bool = true
+var is_moving: bool = false
 
 func _ready() -> void:
 	ia_comp_f.interaction.connect(door_interaction_f)
@@ -31,7 +35,7 @@ func door_interaction(is_locking: bool, front: bool):
 		lock_interaction(front)
 	else:
 		open_close_interaction(front)
-		audio_door.play();
+		
 	
 
 func lock_interaction(front: bool) -> void:
@@ -45,16 +49,19 @@ func lock_interaction(front: bool) -> void:
 		show_lock(front)
 		is_locked = true
 		lock_side_front = front
-	audio_lock.play();
+	play_lock_audio()
 
 func open_close_interaction(front: bool) -> void:
 	if not is_locked:
+		if not is_moving: play_open_close_audio()
 		if is_closed:
+			await animate_opening(front)
 			is_closed = false
-			animate_opening(front)
+			is_moving = false
 		else:
 			await animate_closeing()
 			is_closed = true
+			is_moving = false
 	else:
 		animate_ratteling(front)
 
@@ -73,6 +80,7 @@ func animate_ratteling(front: bool) -> void:
 
 func animate_opening(front: bool) -> void:
 	print("[Door] opening")
+	is_moving = true
 	var tween = get_tree().create_tween()
 	var dir
 	if front:
@@ -82,9 +90,11 @@ func animate_opening(front: bool) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(door_l, "rotation_degrees", Vector3(0, dir, 0), 1.0)
 	tween.parallel().tween_property(door_r, "rotation_degrees", Vector3(0, -dir, 0), 1.0)
+	await tween.finished
 
 func animate_closeing() -> void:
 	print("[Door] closeing")
+	is_moving = true
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(door_l, "rotation_degrees", Vector3(0, 0, 0), 1.0)
@@ -100,3 +110,11 @@ func show_lock(front: bool):
 func hide_lock():
 	lock_f.visible = false
 	lock_b.visible = false
+
+func play_open_close_audio() -> void:
+	audio_door.play();
+	audio_door.pitch_scale = randf_range(.6,1.4)
+
+func play_lock_audio() -> void:
+	audio_lock.play()
+	audio_lock.pitch_scale = randf_range(.6,1.0)

@@ -13,6 +13,7 @@ var can_look_around: bool = true
 @onready var head: Node3D = %Head
 @onready var ui: CanvasLayer = %UI
 @onready var player_hands: PlayerHands = %PlayerHands
+@onready var audio_steps: AudioStreamPlayer3D = $AudioSteps
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
