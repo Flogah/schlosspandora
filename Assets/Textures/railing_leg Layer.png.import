@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b57qc5r1b4m8f"
-path.s3tc="res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"
+uid="uid://cj6mx4cltjtyk"
+path.s3tc="res://.godot/imported/railing_leg Layer.png-9b0c1b81376324081c4cf321a56ff1ee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/ProtoTex/Purple/texture_10.png"
-dest_files=["res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"]
+source_file="res://Assets/textures/railing_leg Layer.png"
+dest_files=["res://.godot/imported/railing_leg Layer.png-9b0c1b81376324081c4cf321a56ff1ee.s3tc.ctex"]
 
 [params]
 
