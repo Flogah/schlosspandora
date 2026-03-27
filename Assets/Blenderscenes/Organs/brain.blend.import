@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://el180bqqo1y0"
-path="res://.godot/imported/brain.blend-ded2c161bb39438f667f88151bc64051.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/Organs/brain.blend"
-dest_files=["res://.godot/imported/brain.blend-ded2c161bb39438f667f88151bc64051.scn"]
 
 [params]
 

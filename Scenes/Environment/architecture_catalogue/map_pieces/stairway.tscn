@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dtkji8tw2tdc7"]
+
+[ext_resource type="Material" uid="uid://ofuun2bvmfmu" path="res://Assets/Materials/Prototyping/wall_greyboxing.tres" id="1_keaxe"]
+[ext_resource type="PackedScene" uid="uid://7fdss1gxmi5c" path="res://Scenes/Environment/architecture_catalogue/long_box.tscn" id="2_paxxm"]
+[ext_resource type="PackedScene" uid="uid://bwe4psr43j1uj" path="res://Scenes/Environment/architecture_catalogue/map_pieces/stair_railing.tscn" id="3_6p1s5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_do7sm"]
+size = Vector2(10, 5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tpqp6"]
+size = Vector2(5, 5)
+
+[node name="Stairway" type="Node3D" unique_id=2141962017]
+
+[node name="WallLong2" type="MeshInstance3D" parent="." unique_id=79973240]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -5, 2.5, 0)
+material_override = ExtResource("1_keaxe")
+mesh = SubResource("PlaneMesh_do7sm")
+
+[node name="WallLong3" type="MeshInstance3D" parent="." unique_id=1244854714]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -5, 7.5, 0)
+material_override = ExtResource("1_keaxe")
+mesh = SubResource("PlaneMesh_do7sm")
+
+[node name="WallLong5" type="MeshInstance3D" parent="." unique_id=1045051895]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -5, 7.5, 10)
+material_override = ExtResource("1_keaxe")
+mesh = SubResource("PlaneMesh_do7sm")
+
+[node name="WallLong4" type="MeshInstance3D" parent="." unique_id=482307217]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -13.5, 7.5, 5)
+material_override = ExtResource("1_keaxe")
+mesh = SubResource("PlaneMesh_do7sm")
+
+[node name="WallShort2" type="MeshInstance3D" parent="." unique_id=1544090490]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -12.5, 7.5, 0)
+material_override = ExtResource("1_keaxe")
+mesh = SubResource("PlaneMesh_tpqp6")
+
+[node name="WallShort3" type="MeshInstance3D" parent="." unique_id=1028121113]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -12.5, 7.5, 10)
+material_override = ExtResource("1_keaxe")
+mesh = SubResource("PlaneMesh_tpqp6")
+
+[node name="LongBox4" parent="." unique_id=603956332 instance=ExtResource("2_paxxm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 0, 10)
+
+[node name="LongBox5" parent="." unique_id=737469791 instance=ExtResource("2_paxxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, 0)
+
+[node name="StairRailing2" parent="." unique_id=753322871 instance=ExtResource("3_6p1s5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.5, 5, 10)
+
+[node name="StairRailing" parent="." unique_id=943336718 instance=ExtResource("3_6p1s5")]

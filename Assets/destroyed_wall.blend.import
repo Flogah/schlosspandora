@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ccw2hhxo1ajb7"
-path="res://.godot/imported/destroyed_wall.blend-9fc1d3df5ac31733b4d218321582b53e.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/destroyed_wall.blend"
-dest_files=["res://.godot/imported/destroyed_wall.blend-9fc1d3df5ac31733b4d218321582b53e.scn"]
 
 [params]
 

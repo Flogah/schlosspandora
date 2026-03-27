@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c76jperguuwsu"
-path="res://.godot/imported/pandorabox.blend-289b4ebc87469f1c4f1292c2b68234be.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/Pandorabox/pandorabox.blend"
-dest_files=["res://.godot/imported/pandorabox.blend-289b4ebc87469f1c4f1292c2b68234be.scn"]
 
 [params]
 

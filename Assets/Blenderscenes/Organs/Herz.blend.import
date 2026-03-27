@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c7rykrj8522mo"
-path="res://.godot/imported/Herz.blend-05d44cd067087d535698b4bdf42a3747.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/Organs/Herz.blend"
-dest_files=["res://.godot/imported/Herz.blend-05d44cd067087d535698b4bdf42a3747.scn"]
 
 [params]
 
