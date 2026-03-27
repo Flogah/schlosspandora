@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b57qc5r1b4m8f"
-path.s3tc="res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"
+uid="uid://ccbcrb80s56qc"
+path.s3tc="res://.godot/imported/Sockel_Color.png-00bcdb87246de34b180e3634910490ab.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/ProtoTex/Purple/texture_10.png"
-dest_files=["res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"]
+source_file="res://Assets/Textures/Sockel_Color.png"
+dest_files=["res://.godot/imported/Sockel_Color.png-00bcdb87246de34b180e3634910490ab.s3tc.ctex"]
 
 [params]
 

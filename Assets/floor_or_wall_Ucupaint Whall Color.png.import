@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b57qc5r1b4m8f"
-path.s3tc="res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"
+uid="uid://dhup7n4cwormv"
+path.s3tc="res://.godot/imported/floor_or_wall_Ucupaint Whall Color.png-fa0d8830699ebdb9b3ff3dcf11966a24.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "e0d92f42ecb676a7c08a5e310d33f9e8"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/ProtoTex/Purple/texture_10.png"
-dest_files=["res://.godot/imported/texture_10.png-e56e977884c3ef6e7bb7f88a90f3a199.s3tc.ctex"]
+source_file="res://Assets/floor_or_wall_Ucupaint Whall Color.png"
+dest_files=["res://.godot/imported/floor_or_wall_Ucupaint Whall Color.png-fa0d8830699ebdb9b3ff3dcf11966a24.s3tc.ctex"]
 
 [params]
 
