@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://dwa2yfhyir7sl" path="res://Scenes/Environment/architecture_catalogue/pillar_side.tscn" id="23_xk5a7"]
 [ext_resource type="PackedScene" uid="uid://0oospbcrrgk4" path="res://Scenes/Environment/architecture_catalogue/pillar_side_capstone_small.tscn" id="24_uqxxb"]
 [ext_resource type="PackedScene" uid="uid://urh7cdsrolhl" path="res://Scenes/Environment/architecture_catalogue/pillar_side_capstone_tall.tscn" id="25_w23c8"]
+[ext_resource type="PackedScene" uid="uid://bk4hmwfbl8h2s" path="res://Scenes/Environment/architecture_catalogue/pointy_pillar.tscn" id="26_5luvi"]
+[ext_resource type="PackedScene" uid="uid://bl3teujiv4ad" path="res://Scenes/Environment/architecture_catalogue/platform_long.tscn" id="27_5guym"]
+[ext_resource type="PackedScene" uid="uid://rngi5whhfm41" path="res://Scenes/Environment/architecture_catalogue/platform_long_wide.tscn" id="28_oxfeb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hlixk"]
 
@@ -36,6 +39,12 @@ size = Vector2(10, 5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_do7sm"]
 size = Vector2(10, 5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xoy4t"]
+size = Vector2(10, 0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8jvs"]
+size = Vector2(5, 0.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tpqp6"]
 size = Vector2(5, 5)
@@ -58,10 +67,11 @@ shadow_enabled = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestingStuff/StaticBody3D" unique_id=921152829]
 shape = SubResource("WorldBoundaryShape3D_hlixk")
 
-[node name="Player" parent="TestingStuff" unique_id=1448344412 instance=ExtResource("13_do7sm")]
-SPEED = 15.0
-
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="TestingStuff" unique_id=225327434]
+
+[node name="Player" parent="TestingStuff" unique_id=1448344412 instance=ExtResource("13_do7sm")]
+visible = false
+SPEED = 15.0
 
 [node name="BaseBigPyrRound" parent="." unique_id=728216792 instance=ExtResource("2_enmjj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -23)
@@ -98,6 +108,16 @@ mesh = SubResource("PlaneMesh_d3o4e")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -35, 2.5, -40)
 material_override = ExtResource("10_d3o4e")
 mesh = SubResource("PlaneMesh_do7sm")
+
+[node name="WallLow" type="MeshInstance3D" parent="." unique_id=1829722562]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -46, 0.25, -40)
+material_override = ExtResource("10_d3o4e")
+mesh = SubResource("PlaneMesh_xoy4t")
+
+[node name="WallLowShort" type="MeshInstance3D" parent="." unique_id=1325238160]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -55, 0.25, -40)
+material_override = ExtResource("10_d3o4e")
+mesh = SubResource("PlaneMesh_q8jvs")
 
 [node name="WallShort" type="MeshInstance3D" parent="." unique_id=1028168314]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -25, 2.5, -40)
@@ -282,3 +302,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -9)
 
 [node name="PillarSideCapstoneTall" parent="." unique_id=45196277 instance=ExtResource("25_w23c8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -9)
+
+[node name="PointyPillar" parent="." unique_id=1454183656 instance=ExtResource("26_5luvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -57)
+
+[node name="PlatformLong" parent="." unique_id=708031375 instance=ExtResource("27_5guym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -38)
+
+[node name="PlatformLong2" parent="." unique_id=24122707 instance=ExtResource("28_oxfeb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -43)
