@@ -230,5 +230,5 @@ theme_override_font_sizes/font_size = 36
 text = "You did not save the world."
 horizontal_alignment = 1
 
-[node name="AudioSteps" type="AudioStreamPlayer3D" parent="." unique_id=1903644779]
+[node name="AudioSteps" type="AudioStreamPlayer" parent="." unique_id=810980457]
 stream = ExtResource("5_htcer")
