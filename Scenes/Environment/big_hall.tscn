@@ -2,10 +2,10 @@
 
 [ext_resource type="Environment" uid="uid://fdh5id7jh7qv" path="res://Scenes/Environment/shady_environment.tres" id="1_7ols1"]
 [ext_resource type="PackedScene" uid="uid://273w5v8pes75" path="res://Scenes/Player/player.tscn" id="1_35uym"]
-[ext_resource type="PackedScene" uid="uid://bgvmrdu6hiikd" path="res://Scenes/Environment/pillar_long.tscn" id="2_ef6gm"]
+[ext_resource type="PackedScene" uid="uid://bgvmrdu6hiikd" path="res://Scenes/Environment/architecture_catalogue/pillar_long.tscn" id="2_ef6gm"]
 [ext_resource type="Texture2D" uid="uid://dxooiks6r6r2i" path="res://Assets/Textures/ProtoTex/Purple/texture_05.png" id="3_u7u1n"]
-[ext_resource type="PackedScene" uid="uid://c6ovk5x1klxue" path="res://Scenes/Environment/base_round.tscn" id="4_2xvcr"]
-[ext_resource type="PackedScene" uid="uid://d4h7lpcmarl3v" path="res://Scenes/Environment/base_round_pyramid.tscn" id="5_7ols1"]
+[ext_resource type="PackedScene" uid="uid://c6ovk5x1klxue" path="res://Scenes/Environment/architecture_catalogue/base_round.tscn" id="4_2xvcr"]
+[ext_resource type="PackedScene" uid="uid://d4h7lpcmarl3v" path="res://Scenes/Environment/architecture_catalogue/base_round_pyramid.tscn" id="5_7ols1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xvcr"]
 albedo_texture = ExtResource("3_u7u1n")
