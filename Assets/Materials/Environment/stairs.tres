@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4m4uayiuh7ck"]
+
+[ext_resource type="Texture2D" uid="uid://cxm88ptclqawy" path="res://Assets/Textures/Stairs_Color_fleshy.png" id="1_tywxg"]
+
+[resource]
+albedo_texture = ExtResource("1_tywxg")

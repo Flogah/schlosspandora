@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xtfh76jesufe"]
+
+[ext_resource type="Material" uid="uid://dsys8c8siaovx" path="res://Assets/Materials/Prototyping/railing_greyboxing.tres" id="1_1wvwv"]
+[ext_resource type="ArrayMesh" uid="uid://dv4ojgqp23qtw" path="res://Assets/Models/Environment/Railings/Railing_Straight.obj" id="1_3a41k"]
+[ext_resource type="ArrayMesh" uid="uid://bboyh2qd47t8y" path="res://Assets/Models/Environment/Railings/Railing_Straight_Coll.obj" id="2_1wvwv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lay1t"]
+data = PackedVector3Array(-0.221, 1.0099, 0, -0.221, 0, 0, -0.221, 1.0099, -5, -0.221, 1.0099, -5, -0.221, 0, 0, -0.221, 0, -5, -0.221, 1.0099, -5, -0.221, 0, -5, 0.221, 1.0099, -5, 0.221, 1.0099, -5, -0.221, 0, -5, 0.221, 0, -5, 0.221, 1.0099, -5, 0.221, 0, -5, 0.221, 1.0099, 0, 0.221, 1.0099, 0, 0.221, 0, -5, 0.221, 0, 0, 0.221, 1.0099, 0, 0.221, 0, 0, -0.221, 1.0099, 0, -0.221, 1.0099, 0, 0.221, 0, 0, -0.221, 0, 0, 0.221, 0, -5, -0.221, 0, -5, 0.221, 0, 0, 0.221, 0, 0, -0.221, 0, -5, -0.221, 0, 0, -0.221, 1.0099, -5, 0.221, 1.0099, -5, -0.221, 1.0099, 0, -0.221, 1.0099, 0, 0.221, 1.0099, -5, 0.221, 1.0099, 0)
+
+[node name="Railing" type="StaticBody3D" unique_id=1312113991]
+
+[node name="RailingStraight" type="MeshInstance3D" parent="." unique_id=898244776]
+material_override = ExtResource("1_1wvwv")
+mesh = ExtResource("1_3a41k")
+
+[node name="RailingStraightColl" type="MeshInstance3D" parent="." unique_id=786876980]
+visible = false
+mesh = ExtResource("2_1wvwv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2101296188]
+shape = SubResource("ConcavePolygonShape3D_lay1t")
