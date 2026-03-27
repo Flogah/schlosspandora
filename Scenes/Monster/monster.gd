@@ -61,7 +61,7 @@ func receive_noise(last_noise: Vector3):
 	var data: Dictionary = {"last_noise": last_noise}
 	state_machine._transition_to_next_state("InvestigatingState", data)
 
-func check_for_player():
+func check_for_player() -> bool:
 	var sighting
 	
 	var overlaps = vision_cone.get_overlapping_bodies()
@@ -70,13 +70,12 @@ func check_for_player():
 			if overlap.is_in_group("Player"):
 				sighting = overlap
 	if !sighting:
-		return
+		return false
 	
 	eye.rotation = Vector3.ZERO
-	var direction = (sighting.position - eye.global_position).normalized()
+	var direction = sighting.global_position.direction_to(eye.global_position)
 	eye.target_position = direction * 20.0
 	if eye.is_colliding():
 		if !eye.get_collider().is_in_group("Player"):
-			return
-	var data: Dictionary = {"target": sighting}
-	state_machine._transition_to_next_state("ChasingState", data)
+			return false
+	return true

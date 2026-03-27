@@ -163,3 +163,6 @@ kill_door = NodePath("../env/Door")
 
 [node name="Monster" parent="Enemies" unique_id=1405422179 instance=ExtResource("7_2kofv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.385416, 9.536743e-07, 6.568405)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1174734990]
+transform = Transform3D(1, 0, 0, 0, 0.107825875, 0.99416983, 0, -0.99416983, 0.107825875, -1.9073486e-06, 12.812554, 1.6449807)

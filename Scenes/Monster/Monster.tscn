@@ -122,4 +122,3 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_8veg5")
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="StateMachine/WanderingState" method="reached"]
-[connection signal="timeout" from="TimerVision" to="." method="check_for_player"]
