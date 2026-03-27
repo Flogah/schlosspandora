@@ -13,7 +13,7 @@ var has_lock: bool = true
 
 func _ready() -> void:
 	button_exit.pressed.connect(func(): get_tree().quit())
-	animated_sprite_hand.animation_finished.connect(randomize_idle_hand)
+	animated_sprite_hand.animation_finished.connect(func(): animated_sprite_hand.play("idle"))
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
@@ -41,27 +41,8 @@ func show_game_over():
 func load_main_menu():
 	get_tree().quit()
 
-func randomize_idle_hand():
-	var rand = randi_range(-1, 1)
-	
-	if !has_lock:
-		if rand > 0:
-			animated_sprite_hand.play("idle_empty")
-		else:
-			animated_sprite_hand.play("idle_empty_2")
-	
-	if rand > 0:
-		animated_sprite_hand.play("idle")
-	else:
-		animated_sprite_hand.play("idle2")
-
 func locking():
-	if !has_lock:
-		has_lock = true
-		animated_sprite_hand.play_backwards("locking")
-	
-	has_lock = false
-	animated_sprite_hand.play("locking")
+	animated_sprite_hand.play("interact")
 
 func interacting():
 	animated_sprite_hand.play("interact")
