@@ -8,7 +8,7 @@ var cam_stand_height = 0.512
 var cam_crouch_height = 0.2
 var crouching = false
 var can_look_around: bool = true
-@export var Sensitivity = 0.005
+@export var Sensitivity = 0.05
 
 @onready var head: Node3D = %Head
 @onready var ui: CanvasLayer = %UI

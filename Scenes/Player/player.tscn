@@ -69,6 +69,14 @@ animations = [{
 collision_layer = 3
 script = ExtResource("1_uvnfx")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1471982164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.028281689)
+light_energy = 0.3
+light_volumetric_fog_energy = 0.111
+light_specular = 0.395
+omni_range = 11.37
+omni_attenuation = 1.371
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1738973053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0042169094, 0)
 shape = SubResource("CapsuleShape3D_uvnfx")
@@ -96,18 +104,21 @@ script = ExtResource("3_xpcdj")
 [node name="Hand" type="Control" parent="UI" unique_id=1954817783]
 unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 15
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="AnimatedSpriteHand" type="AnimatedSprite2D" parent="UI/Hand" unique_id=1265880232]
 unique_name_in_owner = true
-position = Vector2(786, 540)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-18, -19)
+scale = Vector2(0.03, 0.03)
 sprite_frames = SubResource("SpriteFrames_7g0yx")
-animation = &"interact"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="PauseMenu" type="Control" parent="UI" unique_id=1923941847]

@@ -22,60 +22,6 @@
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=396428165]
 environment = ExtResource("1_kic2v")
 
-[node name="DestroyedWall" parent="." unique_id=954033859 instance=ExtResource("3_vtwy6")]
-transform = Transform3D(-4.371139e-08, 0, -1, -1, -4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 1.9106855e-15, 0, 10, 0)
-
-[node name="DestroyedWall2" parent="." unique_id=131982271 instance=ExtResource("3_vtwy6")]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, -1, 8.742278e-08, 1.9106855e-15, 0, 15, 5)
-
-[node name="PlatformLong3" parent="." unique_id=1846272365 instance=ExtResource("5_8ggtl")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 60, 15, 0)
-
-[node name="ArchDoor3" parent="." unique_id=1091381053 instance=ExtResource("2_eodg5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 75, 0, -20)
-
-[node name="VeryBigWall55" parent="." unique_id=1251702272 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 0, -45)
-
-[node name="VeryBigWall56" parent="." unique_id=1210839347 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 30, -45)
-
-[node name="VeryBigWall57" parent="." unique_id=1532086615 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 60, -45)
-
-[node name="VeryBigWall58" parent="." unique_id=573385797 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 90, -45)
-
-[node name="VeryBigWall59" parent="." unique_id=2026702903 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 0, 35)
-
-[node name="VeryBigWall60" parent="." unique_id=1776596561 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 30, 35)
-
-[node name="VeryBigWall61" parent="." unique_id=126820093 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 60, 35)
-
-[node name="VeryBigWall62" parent="." unique_id=2020777811 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 90, 35)
-
-[node name="VeryBigWall63" parent="." unique_id=19253308 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 30, -5)
-
-[node name="VeryBigWall64" parent="." unique_id=1233886759 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 60, -5)
-
-[node name="VeryBigWall65" parent="." unique_id=41322487 instance=ExtResource("8_8ggtl")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 90, -5)
-
-[node name="BigWall" parent="." unique_id=1231954786 instance=ExtResource("9_54p10")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 0, -25)
-
-[node name="BigWall2" parent="." unique_id=1318575307 instance=ExtResource("9_54p10")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 15, -25)
-
-[node name="BigWall3" parent="." unique_id=1351294756 instance=ExtResource("9_54p10")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 15, -5)
-
 [node name="BigBigHall" type="Node3D" parent="." unique_id=72140039]
 
 [node name="PlatformVeryBig" parent="BigBigHall" unique_id=1230874265 instance=ExtResource("6_54p10")]
@@ -444,6 +390,51 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 
 [node name="WallThin" parent="BigBigHall" unique_id=811125640 instance=ExtResource("11_xtseg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 0, -20)
 
+[node name="VeryBigWall55" parent="BigBigHall" unique_id=1251702272 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 0, -45)
+
+[node name="VeryBigWall56" parent="BigBigHall" unique_id=1210839347 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 30, -45)
+
+[node name="VeryBigWall57" parent="BigBigHall" unique_id=1532086615 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 60, -45)
+
+[node name="VeryBigWall58" parent="BigBigHall" unique_id=573385797 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 90, -45)
+
+[node name="VeryBigWall59" parent="BigBigHall" unique_id=2026702903 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 0, 35)
+
+[node name="VeryBigWall60" parent="BigBigHall" unique_id=1776596561 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 30, 35)
+
+[node name="VeryBigWall61" parent="BigBigHall" unique_id=126820093 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 60, 35)
+
+[node name="VeryBigWall62" parent="BigBigHall" unique_id=2020777811 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 90, 35)
+
+[node name="VeryBigWall63" parent="BigBigHall" unique_id=19253308 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 30, -5)
+
+[node name="VeryBigWall64" parent="BigBigHall" unique_id=1233886759 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 60, -5)
+
+[node name="VeryBigWall65" parent="BigBigHall" unique_id=41322487 instance=ExtResource("8_8ggtl")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 90, -5)
+
+[node name="BigWall" parent="BigBigHall" unique_id=1231954786 instance=ExtResource("9_54p10")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 0, -25)
+
+[node name="BigWall2" parent="BigBigHall" unique_id=1318575307 instance=ExtResource("9_54p10")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 15, -25)
+
+[node name="BigWall3" parent="BigBigHall" unique_id=1351294756 instance=ExtResource("9_54p10")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 15, -5)
+
+[node name="ArchDoor3" parent="BigBigHall" unique_id=1091381053 instance=ExtResource("2_eodg5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 75, 0, -20)
+
 [node name="HeartRoom" type="Node3D" parent="." unique_id=1089693173]
 
 [node name="WallLongThin8" parent="HeartRoom" unique_id=932916596 instance=ExtResource("10_lef13")]
@@ -743,8 +734,18 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 60, 
 [node name="Player" parent="StartArea" unique_id=1448344412 instance=ExtResource("12_54p10")]
 transform = Transform3D(-0.07659726, 0, -0.9970621, 0, 1, 0, 0.9970621, 0, -0.07659726, 3.768694, 0.9687432, 2.6580424)
 
+[node name="DestroyedWall" parent="StartArea" unique_id=954033859 instance=ExtResource("3_vtwy6")]
+transform = Transform3D(-4.371139e-08, 0, -1, -1, -4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 1.9106855e-15, 0, 10, 0)
+
+[node name="DestroyedWall2" parent="StartArea" unique_id=131982271 instance=ExtResource("3_vtwy6")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, -1, 8.742278e-08, 1.9106855e-15, 0, 15, 5)
+
+[node name="PlatformLong3" parent="StartArea" unique_id=1846272365 instance=ExtResource("5_8ggtl")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 60, 15, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=583641029]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
 light_color = Color(0.98288125, 0.23786479, 0.4148403, 1)
 light_energy = 0.5
 light_indirect_energy = 4.0
