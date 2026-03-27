@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://i1rcig5xfn2o"
-path="res://.godot/imported/seitensaeule.blend-1e5711e1feb50f312e883ab8b121c7bf.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Blenderscenes/Environment/seitensaeule.blend"
-dest_files=["res://.godot/imported/seitensaeule.blend-1e5711e1feb50f312e883ab8b121c7bf.scn"]
 
 [params]
 
