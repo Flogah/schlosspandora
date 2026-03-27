@@ -14,6 +14,9 @@ func enter(previous_state_path: String, data := {}) -> void:
 	print("Entering Chasing State, chasing " + target.name)
 
 func physics_update(_delta: float) -> void:
+	if !owner.can_move:
+		finished.emit("IdleState")
+	
 	if target:
 		var sighting = owner.check_for_player()
 		if sighting:

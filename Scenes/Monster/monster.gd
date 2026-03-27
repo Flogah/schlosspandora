@@ -73,13 +73,10 @@ func check_for_player():
 		return
 	
 	eye.rotation = Vector3.ZERO
-	var direction = (sighting.global_position - eye.global_position).normalized()
-	eye.target_position = direction * 100.0
+	var direction = (sighting.position - eye.global_position).normalized()
+	eye.target_position = direction * 20.0
 	if eye.is_colliding():
-		print("Seeing")
-		if eye.get_collider().is_in_group("Player"):
-			print("Seeing Player")
-	
-	#if sighting:
-		#var data: Dictionary = {"target": sighting}
-		#state_machine._transition_to_next_state("ChasingState", data)
+		if !eye.get_collider().is_in_group("Player"):
+			return
+	var data: Dictionary = {"target": sighting}
+	state_machine._transition_to_next_state("ChasingState", data)

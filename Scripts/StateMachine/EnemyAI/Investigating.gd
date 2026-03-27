@@ -9,11 +9,15 @@ func enter(previous_state_path: String, data := {}) -> void:
 	investigation_point = data["last_noise"]
 	if !investigation_point:
 		finished.emit("IdleState")
+	
+	
 	navigation_agent_3d.set_target_position(investigation_point)
 	
 	print("Enter Investigation State, checking at " + str(investigation_point))
 
 func physics_update(_delta: float) -> void:
+	if !owner.can_move:
+		return
 	var destination = navigation_agent_3d.get_next_path_position()
 	owner.target = destination
 	var local_destination = destination - owner.global_position
