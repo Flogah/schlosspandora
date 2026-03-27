@@ -12,6 +12,7 @@ var can_look_around: bool = true
 
 @onready var head: Node3D = %Head
 @onready var pause_menu: CanvasLayer = %PauseMenu
+@onready var audio_steps = $AudioStreamPlayer3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -46,6 +47,7 @@ func process_move(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		audio_steps.playing
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

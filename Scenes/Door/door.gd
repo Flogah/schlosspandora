@@ -10,6 +10,8 @@ signal locked
 @onready var lock_f: Node3D = $Locks/LockF
 @onready var lock_b: Node3D = $Locks/LockB
 @onready var locks: Node3D = $Locks
+@onready var audio_door = $AudioStreamPlayer3D
+@onready var audio_lock = $Locks/AudioStreamPlayer3D2
 
 var is_locked: bool = false
 var is_closed: bool = true
@@ -31,6 +33,8 @@ func door_interaction(is_locking: bool, front: bool):
 		lock_interaction(front)
 	else:
 		open_close_interaction(front)
+		audio_door.play();
+	
 
 func lock_interaction(front: bool) -> void:
 	if is_locked and lock_side_front == front: 
@@ -43,6 +47,7 @@ func lock_interaction(front: bool) -> void:
 		show_lock(front)
 		is_locked = true
 		lock_side_front = front
+	audio_lock.play();
 
 func open_close_interaction(front: bool) -> void:
 	if not is_locked:
