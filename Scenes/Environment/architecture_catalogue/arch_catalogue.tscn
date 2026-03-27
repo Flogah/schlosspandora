@@ -19,6 +19,8 @@
 [ext_resource type="ArrayMesh" uid="uid://ccf0vcxut171r" path="res://Assets/Models/Environment/Railings/railing_base.obj" id="18_1g1ne"]
 [ext_resource type="PackedScene" uid="uid://cojdx4c45dldn" path="res://Scenes/Environment/architecture_catalogue/pollard.tscn" id="18_xjc64"]
 [ext_resource type="PackedScene" uid="uid://dnomr6f6eefgv" path="res://Scenes/Environment/architecture_catalogue/giant_pillar.tscn" id="19_1g1ne"]
+[ext_resource type="PackedScene" uid="uid://tiuu1f0xiiws" path="res://Scenes/Environment/architecture_catalogue/arch.tscn" id="20_xjc64"]
+[ext_resource type="PackedScene" uid="uid://bnopfvpy4md2m" path="res://Scenes/Environment/architecture_catalogue/darm.tscn" id="21_lay1t"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hlixk"]
 
@@ -253,3 +255,9 @@ mesh = ExtResource("18_1g1ne")
 
 [node name="GiantPillar" parent="." unique_id=757511841 instance=ExtResource("19_1g1ne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -56)
+
+[node name="Arch" parent="." unique_id=1199004838 instance=ExtResource("20_xjc64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9)
+
+[node name="Darm" parent="." unique_id=788620836 instance=ExtResource("21_lay1t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40, 0, -16)
