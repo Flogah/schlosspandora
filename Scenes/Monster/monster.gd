@@ -7,6 +7,11 @@ enum side{
 	back
 }
 
+@export var ai_active: bool = true
+@export var can_move: bool = true
+@export var aggressive: bool = true
+
+
 @export var chase_speed: float = 10.0
 
 @export var sprites: Dictionary[side, Texture2D]={
@@ -18,7 +23,9 @@ enum side{
 
 @onready var sprite: Sprite3D = %Sprite3D
 @onready var state_machine: StateMachine = %StateMachine
-@onready var vision_cone: Node3D = %VisionCone
+@onready var eye: RayCast3D = %Eye
+@onready var vision_cone: Area3D = %VisionCone
+@onready var timer_vision: Timer = %TimerVision
 
 var target:Vector3
 var can_look: bool = true
@@ -29,12 +36,6 @@ func _process(delta: float) -> void:
 		look_at(bla)
 	
 	adjust_sprite_for_angle()
-
-func _physics_process(delta: float) -> void:
-	var sighting = check_for_player()
-	if sighting:
-		var data: Dictionary = {"target": sighting}
-		state_machine._transition_to_next_state("ChasingState", data)
 
 func adjust_sprite_for_angle():
 	var pos_2d = Vector2(position.x, position.z)
@@ -61,12 +62,24 @@ func receive_noise(last_noise: Vector3):
 	state_machine._transition_to_next_state("InvestigatingState", data)
 
 func check_for_player():
-	var rays = vision_cone.get_children()
-	for eye in rays:
-		var ray: RayCast3D = eye
-		if ray.is_colliding():
-			var colliding_body = ray.get_collider()
-			if colliding_body:
-				print(colliding_body.name)
-				if colliding_body.is_class("CharacterBody3D"):
-					return colliding_body
+	var sighting
+	
+	var overlaps = vision_cone.get_overlapping_bodies()
+	if overlaps.size() > 0:
+		for overlap in overlaps:
+			if overlap.is_in_group("Player"):
+				sighting = overlap
+	if !sighting:
+		return
+	
+	eye.rotation = Vector3.ZERO
+	var direction = (sighting.global_position - eye.global_position).normalized()
+	eye.target_position = direction * 100.0
+	if eye.is_colliding():
+		print("Seeing")
+		if eye.get_collider().is_in_group("Player"):
+			print("Seeing Player")
+	
+	#if sighting:
+		#var data: Dictionary = {"target": sighting}
+		#state_machine._transition_to_next_state("ChasingState", data)

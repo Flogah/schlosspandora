@@ -10,7 +10,7 @@ var crouching = false
 var can_look_around: bool = true
 @export var Sensitivity = 0.005
 
-@onready var head = $Head
+@onready var head: Node3D = %Head
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
