@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b8e558yv6w0sf" path="res://Scenes/Player/player_hands.tscn" id="2_a3d8c"]
 [ext_resource type="Script" uid="uid://drfutgub3j3nu" path="res://Scenes/Player/playerUI.gd" id="3_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://c8p2ku86uunkt" path="res://Assets/Textures/hand/blinzeln spritesheet mit stinki finger.png" id="4_mtuoh"]
+[ext_resource type="AudioStream" uid="uid://b1k3oiycjk5hp" path="res://SoundFX/Schritte.wav" id="5_htcer"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvnfx"]
 
@@ -104,6 +105,7 @@ script = ExtResource("3_xpcdj")
 [node name="Hand" type="Control" parent="UI" unique_id=1954817783]
 unique_name_in_owner = true
 layout_mode = 3
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -227,3 +229,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = "You did not save the world."
 horizontal_alignment = 1
+
+[node name="AudioSteps" type="AudioStreamPlayer" parent="." unique_id=810980457]
+stream = ExtResource("5_htcer")

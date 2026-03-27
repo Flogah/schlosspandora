@@ -13,6 +13,7 @@ var can_look_around: bool = true
 @onready var head: Node3D = %Head
 @onready var ui: CanvasLayer = %UI
 @onready var player_hands: PlayerHands = %PlayerHands
+@onready var audio_steps: AudioStreamPlayer = $AudioSteps
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -42,16 +43,17 @@ func process_crouch() -> void:
 		
 		print($CollisionShape3D.shape.height)
 
-
 func process_move(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		play_steps_audio(true)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		play_steps_audio(false)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -59,3 +61,10 @@ func process_move(delta: float) -> void:
 
 func game_over():
 	ui.show_game_over()
+
+func play_steps_audio(play: bool) -> void:
+	if play != audio_steps.playing:
+		if is_on_floor():
+			audio_steps.playing = play
+		else:
+			audio_steps.playing = false

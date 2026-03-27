@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtyp615bwl0n" path="res://Scenes/Environment/architecture_catalogue/pillar_big_broken.tscn" id="13_xtseg"]
 [ext_resource type="PackedScene" uid="uid://bu8lalc81x5d2" path="res://Scenes/Environment/architecture_catalogue/pillar_big.tscn" id="14_fu5bm"]
 [ext_resource type="PackedScene" uid="uid://dq8g0iq7bp1hn" path="res://Scenes/Organ/organ.tscn" id="14_kic2v"]
+[ext_resource type="AudioStream" uid="uid://bv6w1wacqoiqg" path="res://SoundFX/AAAAAHHmbiance.wav" id="17_bhy6q"]
 
 [node name="Schloss" type="Node3D" unique_id=1432972915]
 
@@ -750,3 +751,7 @@ light_color = Color(0.98288125, 0.23786479, 0.4148403, 1)
 light_energy = 0.5
 light_indirect_energy = 4.0
 shadow_enabled = true
+
+[node name="AudioAmbience" type="AudioStreamPlayer" parent="." unique_id=670930061]
+stream = ExtResource("17_bhy6q")
+autoplay = true

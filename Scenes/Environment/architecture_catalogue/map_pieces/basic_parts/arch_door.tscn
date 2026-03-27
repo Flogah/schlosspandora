@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blenderscenes/Door.blend" id="3_j0rg3"]
 [ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/Player/interaction_component.tscn" id="4_dimle"]
 [ext_resource type="PackedScene" uid="uid://u4ys42lhfobq" path="res://Assets/Blenderscenes/lock/lock_3d.glb" id="5_d6syl"]
+[ext_resource type="AudioStream" uid="uid://d4nyyq0q2nnpp" path="res://SoundFX/door_creaking1.wav" id="6_j0rg3"]
+[ext_resource type="AudioStream" uid="uid://ctpdwe5bpqvgj" path="res://SoundFX/lock_sound.wav" id="7_dimle"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0nv3c"]
 size = Vector3(0.08203125, 2.2626953, 1)
@@ -64,3 +66,9 @@ visible = false
 [node name="LockB" parent="D/Locks" unique_id=1356716378 instance=ExtResource("5_d6syl")]
 transform = Transform3D(-0.26302472, 0.032295376, -2.3167035e-08, 0.032295376, 0.26302472, 0, 2.299435e-08, -2.8233513e-09, -0.265, -0.08153872, 0.5544267, -2.6674941e-05)
 visible = false
+
+[node name="AudioDoor" type="AudioStreamPlayer3D" parent="." unique_id=534803900]
+stream = ExtResource("6_j0rg3")
+
+[node name="AudioLock" type="AudioStreamPlayer3D" parent="." unique_id=864306837]
+stream = ExtResource("7_dimle")
