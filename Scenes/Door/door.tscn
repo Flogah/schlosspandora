@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bj07x860tx50j" path="res://Scenes/Door/door.gd" id="1_p0e35"]
 [ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blenderscenes/Door.blend" id="1_w6aom"]
 [ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/Player/interaction_component.tscn" id="3_fahql"]
-[ext_resource type="PackedScene" uid="uid://8jprp174nmgl" path="res://Assets/Blenderscenes/Lock.blend" id="4_ab4ky"]
+[ext_resource type="PackedScene" uid="uid://u4ys42lhfobq" path="res://Assets/Blenderscenes/lock/lock_3d.glb" id="4_3viil"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fahql"]
 size = Vector3(0.08203125, 2.2626953, 1)
@@ -50,10 +50,10 @@ shape = SubResource("BoxShape3D_ab4ky")
 
 [node name="Locks" type="Node3D" parent="." unique_id=1915773394]
 
-[node name="LockF" parent="Locks" unique_id=454185793 instance=ExtResource("4_ab4ky")]
-transform = Transform3D(0.9924437, -0.12270082, 0, 0.12270082, 0.9924437, 0, 0, 0, 1, 0.12342954, 0.58619493, 0)
+[node name="LockF" parent="Locks" unique_id=1918175302 instance=ExtResource("4_3viil")]
+transform = Transform3D(0.26302472, -0.032295376, 0, 0.032295376, 0.26302472, 0, 0, 0, 0.265, 0.08670907, 0.56, -0.014)
 visible = false
 
-[node name="LockB" parent="Locks" unique_id=385174547 instance=ExtResource("4_ab4ky")]
-transform = Transform3D(-0.99254614, 0.12186935, -8.742278e-08, 0.12186935, 0.99254614, 0, 8.677114e-08, -1.0654157e-08, -1, -0.126376, 0.58619493, 0)
+[node name="LockB" parent="Locks" unique_id=471553707 instance=ExtResource("4_3viil")]
+transform = Transform3D(-0.26302472, 0.032295376, -2.3167035e-08, 0.032295376, 0.26302472, 0, 2.299435e-08, -2.8233513e-09, -0.265, -0.08153872, 0.5544267, -2.6674941e-05)
 visible = false

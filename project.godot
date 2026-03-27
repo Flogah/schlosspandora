@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="schlosspandora"
-run/main_scene="uid://yerf6fxmxqai"
+run/main_scene="uid://p58txrgg4pw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,6 +27,10 @@ folder_colors={
 "res://Scenes/": "yellow",
 "res://Scripts/": "teal"
 }
+
+[global_group]
+
+Player=""
 
 [input]
 
