@@ -11,10 +11,13 @@ var can_look_around: bool = true
 @export var Sensitivity = 0.005
 
 @onready var head: Node3D = %Head
-@onready var pause_menu: CanvasLayer = %PauseMenu
+@onready var ui: CanvasLayer = %UI
+@onready var player_hands: PlayerHands = %PlayerHands
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player_hands.interact.connect(func(): ui.interacting())
+	player_hands.locking.connect(func(): ui.locking())
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and can_look_around:
@@ -55,4 +58,4 @@ func process_move(delta: float) -> void:
 	move_and_slide()
 
 func game_over():
-	pause_menu.show_game_over()
+	ui.show_game_over()

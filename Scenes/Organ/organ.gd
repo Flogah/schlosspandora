@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 		kill_door = null
 
 func die() -> void:
-	reste.visible = true
-	organ.visible = false
+	if reste and organ:
+		reste.visible = true
+		organ.visible = false
 	
 	
