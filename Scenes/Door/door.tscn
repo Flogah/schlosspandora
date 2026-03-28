@@ -16,55 +16,57 @@ size = Vector3(1, 2, 2)
 [node name="Door" type="Node3D" unique_id=79520329]
 script = ExtResource("1_p0e35")
 
-[node name="Door_L" type="AnimatableBody3D" parent="." unique_id=1538567378]
+[node name="D" type="Node3D" parent="." unique_id=27994745]
+
+[node name="Door_L" type="AnimatableBody3D" parent="D" unique_id=1538567378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, 1)
 
-[node name="Door" parent="Door_L" unique_id=1883463864 instance=ExtResource("1_w6aom")]
+[node name="Door" parent="D/Door_L" unique_id=1883463864 instance=ExtResource("1_w6aom")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_L" unique_id=271691376]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/Door_L" unique_id=271691376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096191406, -0.4884181)
 shape = SubResource("BoxShape3D_fahql")
 
-[node name="Door_R" type="AnimatableBody3D" parent="." unique_id=923482039]
+[node name="Door_R" type="AnimatableBody3D" parent="D" unique_id=923482039]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, -1)
 
-[node name="Door" parent="Door_R" unique_id=32876004 instance=ExtResource("1_w6aom")]
+[node name="Door" parent="D/Door_R" unique_id=32876004 instance=ExtResource("1_w6aom")]
 transform = Transform3D(4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, 0, -3.821371e-15, 8.742278e-08, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_R" unique_id=1066378967]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/Door_R" unique_id=1066378967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096191406, 0.51140237)
 shape = SubResource("BoxShape3D_fahql")
 
-[node name="IaCompFront" parent="." unique_id=1994348484 instance=ExtResource("3_fahql")]
+[node name="IaCompFront" parent="D" unique_id=1994348484 instance=ExtResource("3_fahql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.005, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IaCompFront" unique_id=1380100238]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/IaCompFront" unique_id=1380100238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
 shape = SubResource("BoxShape3D_ab4ky")
 
-[node name="IaCompBack" parent="." unique_id=2044994085 instance=ExtResource("3_fahql")]
+[node name="IaCompBack" parent="D" unique_id=2044994085 instance=ExtResource("3_fahql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5485495, 1.005, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IaCompBack" unique_id=1091141852]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/IaCompBack" unique_id=1091141852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
 shape = SubResource("BoxShape3D_ab4ky")
 
-[node name="Locks" type="Node3D" parent="." unique_id=1915773394]
+[node name="Locks" type="Node3D" parent="D" unique_id=1915773394]
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Locks" unique_id=1897058481]
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="D/Locks" unique_id=1897058481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6117182, 0)
 stream = ExtResource("4_nb5lv")
 volume_db = -2.0
 
-[node name="LockF" parent="Locks" unique_id=1918175302 instance=ExtResource("4_3viil")]
+[node name="LockF" parent="D/Locks" unique_id=1918175302 instance=ExtResource("4_3viil")]
 transform = Transform3D(0.26302472, -0.032295376, 0, 0.032295376, 0.26302472, 0, 0, 0, 0.265, 0.08670907, 0.56, -0.014)
 visible = false
 
-[node name="LockB" parent="Locks" unique_id=471553707 instance=ExtResource("4_3viil")]
+[node name="LockB" parent="D/Locks" unique_id=471553707 instance=ExtResource("4_3viil")]
 transform = Transform3D(-0.26302472, 0.032295376, -2.3167035e-08, 0.032295376, 0.26302472, 0, 2.299435e-08, -2.8233513e-09, -0.265, -0.08153872, 0.5544267, -2.6674941e-05)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1068662498]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="D" unique_id=1068662498]
 stream = ExtResource("6_3oje4")
 volume_db = -1.0
