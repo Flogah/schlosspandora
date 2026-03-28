@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bu8lalc81x5d2" path="res://Scenes/Environment/architecture_catalogue/pillar_big.tscn" id="14_fu5bm"]
 [ext_resource type="PackedScene" uid="uid://dq8g0iq7bp1hn" path="res://Scenes/Organ/organ.tscn" id="14_kic2v"]
 [ext_resource type="AudioStream" uid="uid://bv6w1wacqoiqg" path="res://SoundFX/AAAAAHHmbiance.wav" id="17_bhy6q"]
+[ext_resource type="PackedScene" uid="uid://c6glhgr804s8d" path="res://Scenes/Monster/Monster.tscn" id="18_ybqnt"]
 
 [node name="Schloss" type="Node3D" unique_id=1432972915]
 
@@ -754,14 +755,8 @@ shadow_enabled = true
 
 [node name="AudioAmbience" type="AudioStreamPlayer" parent="." unique_id=670930061]
 stream = ExtResource("17_bhy6q")
+volume_db = -7.488
 autoplay = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=869180694]
-transform = Transform3D(1, 0, 0, 0, -0.3375389, 0.9413116, 0, -0.9413116, -0.3375389, 165.25015, 160.82967, -83.09059)
-light_color = Color(0.43529412, 0.28627452, 1, 1)
-light_energy = 16.0
-light_volumetric_fog_energy = 5.247
-shadow_enabled = true
-spot_range = 225.14922
-spot_attenuation = 0.38
-spot_angle = 22.664457
+[node name="Monster" parent="." unique_id=1405422179 instance=ExtResource("18_ybqnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.85725, 0.37851882, -20.201965)
