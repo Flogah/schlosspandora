@@ -117,8 +117,8 @@ size_flags_vertical = 3
 
 [node name="AnimatedSpriteHand" type="AnimatedSprite2D" parent="UI/Hand" unique_id=1265880232]
 unique_name_in_owner = true
-position = Vector2(-18, -19)
-scale = Vector2(0.03, 0.03)
+position = Vector2(-38, -40)
+scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_7g0yx")
 animation = &"idle"
 autoplay = "idle"
