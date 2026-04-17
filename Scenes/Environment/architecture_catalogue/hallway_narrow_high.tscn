@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cm1m317iebeao"]
+
+[ext_resource type="PackedScene" uid="uid://di8el4qox4kqv" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/hallway_narrow_floor.tscn" id="1_hcd2e"]
+[ext_resource type="PackedScene" uid="uid://cebg2sge1bmcx" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/hallway_narrow_walls.tscn" id="2_cdv02"]
+[ext_resource type="PackedScene" uid="uid://chkg4sgtk4k1" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/hallway_narrow_roof.tscn" id="3_en0r8"]
+
+[node name="HallwayNarrowHigh" type="Node3D" unique_id=1437814396]
+
+[node name="HallwayNarrowFloor" parent="." unique_id=146568559 instance=ExtResource("1_hcd2e")]
+
+[node name="HallwayNarrowWalls" parent="." unique_id=545849434 instance=ExtResource("2_cdv02")]
+
+[node name="HallwayNarrowWalls2" parent="." unique_id=2134127736 instance=ExtResource("2_cdv02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="HallwayNarrowWalls3" parent="." unique_id=709002203 instance=ExtResource("2_cdv02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="HallwayNarrowRoof" parent="." unique_id=2088037104 instance=ExtResource("3_en0r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)

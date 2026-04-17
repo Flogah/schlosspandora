@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bboyh2qd47t8y"
+path="res://.godot/imported/Railing_Straight_Coll.obj-7e6ad6e91e8d2b92e222771a60560d90.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Railing_Straight_Coll.obj-7e6ad6e91e8d2b92e222771a60560d90.mesh"]
+
+source_file="res://Assets/Models/Environment/Railings/Railing_Straight_Coll.obj"
+dest_files=["res://.godot/imported/Railing_Straight_Coll.obj-7e6ad6e91e8d2b92e222771a60560d90.mesh", "res://.godot/imported/Railing_Straight_Coll.obj-7e6ad6e91e8d2b92e222771a60560d90.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

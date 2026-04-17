@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bhlyxhr2noj80"]
+
+[ext_resource type="Script" uid="uid://bj07x860tx50j" path="res://Scenes/Door/door.gd" id="1_afnba"]
+[ext_resource type="PackedScene" uid="uid://tiuu1f0xiiws" path="res://Scenes/Environment/architecture_catalogue/arch.tscn" id="1_mduff"]
+[ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blenderscenes/Door.blend" id="3_j0rg3"]
+[ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/Player/interaction_component.tscn" id="4_dimle"]
+[ext_resource type="PackedScene" uid="uid://u4ys42lhfobq" path="res://Assets/Blenderscenes/lock/lock_3d.glb" id="5_d6syl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0nv3c"]
+size = Vector3(0.08203125, 2.2626953, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s82m6"]
+size = Vector3(1, 2, 2)
+
+[node name="ArchDoor" type="Node3D" unique_id=363941183]
+script = ExtResource("1_afnba")
+
+[node name="Arch2" parent="." unique_id=1199004838 instance=ExtResource("1_mduff")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 5)
+
+[node name="D" type="Node3D" parent="." unique_id=1887050473]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 2.5)
+
+[node name="Door_L" type="AnimatableBody3D" parent="D" unique_id=486942846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, 1)
+
+[node name="Door" parent="D/Door_L" unique_id=133338029 instance=ExtResource("3_j0rg3")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/Door_L" unique_id=124919731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096191406, -0.4884181)
+shape = SubResource("BoxShape3D_0nv3c")
+
+[node name="Door_R" type="AnimatableBody3D" parent="D" unique_id=1576621320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, -1)
+
+[node name="Door" parent="D/Door_R" unique_id=1481748731 instance=ExtResource("3_j0rg3")]
+transform = Transform3D(4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, 0, -3.821371e-15, 8.742278e-08, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/Door_R" unique_id=1339653642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096191406, 0.51140237)
+shape = SubResource("BoxShape3D_0nv3c")
+
+[node name="IaCompFront" parent="D" unique_id=1994348484 instance=ExtResource("4_dimle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.005, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/IaCompFront" unique_id=1786790412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
+shape = SubResource("BoxShape3D_s82m6")
+
+[node name="IaCompBack" parent="D" unique_id=2131266853 instance=ExtResource("4_dimle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5485495, 1.005, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="D/IaCompBack" unique_id=132837319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
+shape = SubResource("BoxShape3D_s82m6")
+
+[node name="Locks" type="Node3D" parent="D" unique_id=410649259]
+
+[node name="LockF" parent="D/Locks" unique_id=392221444 instance=ExtResource("5_d6syl")]
+transform = Transform3D(0.26302472, -0.032295376, 0, 0.032295376, 0.26302472, 0, 0, 0, 0.265, 0.08670907, 0.56, -0.014)
+visible = false
+
+[node name="LockB" parent="D/Locks" unique_id=1356716378 instance=ExtResource("5_d6syl")]
+transform = Transform3D(-0.26302472, 0.032295376, -2.3167035e-08, 0.032295376, 0.26302472, 0, 2.299435e-08, -2.8233513e-09, -0.265, -0.08153872, 0.5544267, -2.6674941e-05)
+visible = false

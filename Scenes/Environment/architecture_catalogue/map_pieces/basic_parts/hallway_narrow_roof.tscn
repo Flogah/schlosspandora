@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://chkg4sgtk4k1"]
+
+[ext_resource type="Material" uid="uid://bhjtmnu4na63" path="res://Assets/Materials/Prototyping/dark_greyboxing.tres" id="1_2r404"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d3o4e"]
+size = Vector2(10, 5)
+
+[node name="HallwayNarrowRoof" type="Node3D" unique_id=2088037104]
+
+[node name="FloorLong7" type="MeshInstance3D" parent="." unique_id=484391778]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 5, 5, 2.5)
+material_override = ExtResource("1_2r404")
+mesh = SubResource("PlaneMesh_d3o4e")

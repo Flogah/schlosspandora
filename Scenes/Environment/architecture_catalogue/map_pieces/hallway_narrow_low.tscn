@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b77dmmonyd2yn"]
+
+[ext_resource type="PackedScene" uid="uid://cebg2sge1bmcx" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/hallway_narrow_walls.tscn" id="1_43wtv"]
+[ext_resource type="PackedScene" uid="uid://di8el4qox4kqv" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/hallway_narrow_floor.tscn" id="2_gl2xp"]
+[ext_resource type="PackedScene" uid="uid://chkg4sgtk4k1" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/hallway_narrow_roof.tscn" id="3_hbcf1"]
+
+[node name="HallwayNarrowLow" type="Node3D" unique_id=1697829104]
+
+[node name="HallwayNarrowWalls" parent="." unique_id=545849434 instance=ExtResource("1_43wtv")]
+
+[node name="HallwayNarrowFloor" parent="." unique_id=146568559 instance=ExtResource("2_gl2xp")]
+
+[node name="HallwayNarrowRoof" parent="." unique_id=2088037104 instance=ExtResource("3_hbcf1")]

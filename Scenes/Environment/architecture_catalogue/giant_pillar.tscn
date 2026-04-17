@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dnomr6f6eefgv"]
+
+[ext_resource type="PackedScene" uid="uid://bu8lalc81x5d2" path="res://Scenes/Environment/architecture_catalogue/pillar_big.tscn" id="1_srxoh"]
+[ext_resource type="PackedScene" uid="uid://cl38b0njelwa2" path="res://Scenes/Environment/architecture_catalogue/base_big_round.tscn" id="2_835ns"]
+[ext_resource type="PackedScene" uid="uid://d3sdanxt83yy4" path="res://Scenes/Environment/architecture_catalogue/wide_long_box.tscn" id="3_gxdnl"]
+[ext_resource type="PackedScene" uid="uid://cf1om6x0nrwi0" path="res://Scenes/Environment/architecture_catalogue/base_big_pyr_round.tscn" id="4_x1ikg"]
+
+[node name="GiantPillar" type="Node3D" unique_id=757511841]
+
+[node name="PillarBig3" parent="." unique_id=1033136188 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+
+[node name="PillarBig4" parent="." unique_id=545581073 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)
+
+[node name="PillarBig5" parent="." unique_id=1464364906 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, 0)
+
+[node name="PillarBig6" parent="." unique_id=1133723381 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41, 0)
+
+[node name="PillarBig7" parent="." unique_id=608871913 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51, 0)
+
+[node name="PillarBig8" parent="." unique_id=95022115 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 61, 0)
+
+[node name="PillarBig9" parent="." unique_id=307811080 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 72, 0)
+
+[node name="PillarBig10" parent="." unique_id=1044948272 instance=ExtResource("1_srxoh")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 87, 0)
+
+[node name="PillarBig11" parent="." unique_id=2138674847 instance=ExtResource("1_srxoh")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 105, 0)
+
+[node name="BaseBigRound2" parent="." unique_id=1093358226 instance=ExtResource("2_835ns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="WideLongBox4" parent="." unique_id=486195690 instance=ExtResource("3_gxdnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="BaseBigPyrRound2" parent="." unique_id=1588220930 instance=ExtResource("4_x1ikg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)

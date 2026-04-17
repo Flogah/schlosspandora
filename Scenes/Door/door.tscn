@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://6lodr0q515bt"]
+
+[ext_resource type="Script" uid="uid://bj07x860tx50j" path="res://Scenes/Door/door.gd" id="1_p0e35"]
+[ext_resource type="PackedScene" uid="uid://ci4lg0vcai2nk" path="res://Assets/Blenderscenes/Door.blend" id="1_w6aom"]
+[ext_resource type="PackedScene" uid="uid://ksyg2pqcx6xm" path="res://Scenes/Player/interaction_component.tscn" id="3_fahql"]
+[ext_resource type="PackedScene" uid="uid://u4ys42lhfobq" path="res://Assets/Blenderscenes/lock/lock_3d.glb" id="4_3viil"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fahql"]
+size = Vector3(0.08203125, 2.2626953, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ab4ky"]
+size = Vector3(1, 2, 2)
+
+[node name="Door" type="Node3D" unique_id=79520329]
+script = ExtResource("1_p0e35")
+
+[node name="Door_L" type="AnimatableBody3D" parent="." unique_id=1538567378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, 1)
+
+[node name="Door" parent="Door_L" unique_id=1883463864 instance=ExtResource("1_w6aom")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_L" unique_id=271691376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096191406, -0.4884181)
+shape = SubResource("BoxShape3D_fahql")
+
+[node name="Door_R" type="AnimatableBody3D" parent="." unique_id=923482039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0309764, -1)
+
+[node name="Door" parent="Door_R" unique_id=32876004 instance=ExtResource("1_w6aom")]
+transform = Transform3D(4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, 0, -3.821371e-15, 8.742278e-08, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_R" unique_id=1066378967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096191406, 0.51140237)
+shape = SubResource("BoxShape3D_fahql")
+
+[node name="IaCompFront" parent="." unique_id=1994348484 instance=ExtResource("3_fahql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.005, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IaCompFront" unique_id=1380100238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
+shape = SubResource("BoxShape3D_ab4ky")
+
+[node name="IaCompBack" parent="." unique_id=2044994085 instance=ExtResource("3_fahql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5485495, 1.005, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IaCompBack" unique_id=1091141852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021953583, 0)
+shape = SubResource("BoxShape3D_ab4ky")
+
+[node name="Locks" type="Node3D" parent="." unique_id=1915773394]
+
+[node name="LockF" parent="Locks" unique_id=1918175302 instance=ExtResource("4_3viil")]
+transform = Transform3D(0.26302472, -0.032295376, 0, 0.032295376, 0.26302472, 0, 0, 0, 0.265, 0.08670907, 0.56, -0.014)
+visible = false
+
+[node name="LockB" parent="Locks" unique_id=471553707 instance=ExtResource("4_3viil")]
+transform = Transform3D(-0.26302472, 0.032295376, -2.3167035e-08, 0.032295376, 0.26302472, 0, 2.299435e-08, -2.8233513e-09, -0.265, -0.08153872, 0.5544267, -2.6674941e-05)
+visible = false

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cebg2sge1bmcx"]
+
+[ext_resource type="PackedScene" uid="uid://dfefbvlhk1g2r" path="res://Scenes/Environment/architecture_catalogue/wall_long_thin.tscn" id="1_1ett2"]
+
+[node name="HallwayNarrowWalls" type="Node3D" unique_id=545849434]
+
+[node name="WallLongThin" parent="." unique_id=667482571 instance=ExtResource("1_1ett2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="WallLongThin2" parent="." unique_id=1107579534 instance=ExtResource("1_1ett2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

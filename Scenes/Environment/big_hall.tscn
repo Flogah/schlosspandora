@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://n6ji1yartofb"]
+
+[ext_resource type="Environment" uid="uid://fdh5id7jh7qv" path="res://Scenes/Environment/shady_environment.tres" id="1_7ols1"]
+[ext_resource type="PackedScene" uid="uid://273w5v8pes75" path="res://Scenes/Player/player.tscn" id="1_35uym"]
+[ext_resource type="PackedScene" uid="uid://dnomr6f6eefgv" path="res://Scenes/Environment/architecture_catalogue/giant_pillar.tscn" id="3_2xvcr"]
+[ext_resource type="Texture2D" uid="uid://dxooiks6r6r2i" path="res://Assets/Textures/ProtoTex/Purple/texture_05.png" id="3_u7u1n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xvcr"]
+albedo_texture = ExtResource("3_u7u1n")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ols1"]
+material = SubResource("StandardMaterial3D_2xvcr")
+size = Vector3(60, 1, 120)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ols1"]
+size = Vector3(60, 1, 120)
+
+[node name="BigHall" type="Node3D" unique_id=449936660]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=43870051]
+environment = ExtResource("1_7ols1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=629127777]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.98288125, 0.23786479, 0.4148403, 1)
+light_energy = 0.5
+light_indirect_energy = 4.0
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1448344412 instance=ExtResource("1_35uym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Environment" type="Node3D" parent="." unique_id=1784466730]
+
+[node name="Pillars" type="Node3D" parent="Environment" unique_id=1953397998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.267375, 0)
+
+[node name="GiantPillar" parent="Environment/Pillars" unique_id=757511841 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="GiantPillar3" parent="Environment/Pillars" unique_id=1001680824 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="GiantPillar2" parent="Environment/Pillars" unique_id=483293281 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="GiantPillar4" parent="Environment/Pillars" unique_id=199156221 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="GiantPillar5" parent="Environment/Pillars" unique_id=12675449 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
+
+[node name="GiantPillar6" parent="Environment/Pillars" unique_id=1107719589 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="GiantPillar7" parent="Environment/Pillars" unique_id=1947443406 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
+
+[node name="GiantPillar8" parent="Environment/Pillars" unique_id=60307179 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20)
+
+[node name="GiantPillar9" parent="Environment/Pillars" unique_id=1271069174 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -40)
+
+[node name="GiantPillar10" parent="Environment/Pillars" unique_id=2085994940 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
+
+[node name="GiantPillar11" parent="Environment/Pillars" unique_id=132619659 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -40)
+
+[node name="GiantPillar12" parent="Environment/Pillars" unique_id=497550338 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -40)
+
+[node name="GiantPillar13" parent="Environment/Pillars" unique_id=1574835655 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+
+[node name="GiantPillar14" parent="Environment/Pillars" unique_id=470031550 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20)
+
+[node name="GiantPillar15" parent="Environment/Pillars" unique_id=777113618 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+
+[node name="GiantPillar16" parent="Environment/Pillars" unique_id=866054586 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 20)
+
+[node name="GiantPillar17" parent="Environment/Pillars" unique_id=325627678 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 40)
+
+[node name="GiantPillar18" parent="Environment/Pillars" unique_id=1963214235 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 40)
+
+[node name="GiantPillar19" parent="Environment/Pillars" unique_id=1640416186 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 40)
+
+[node name="GiantPillar20" parent="Environment/Pillars" unique_id=1530892893 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 40)
+
+[node name="GiantPillar21" parent="Environment/Pillars" unique_id=782097107 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 60)
+
+[node name="GiantPillar22" parent="Environment/Pillars" unique_id=1058310500 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 60)
+
+[node name="GiantPillar23" parent="Environment/Pillars" unique_id=504283045 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 60)
+
+[node name="GiantPillar24" parent="Environment/Pillars" unique_id=259588637 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 60)
+
+[node name="GiantPillar25" parent="Environment/Pillars" unique_id=124540138 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -60)
+
+[node name="GiantPillar26" parent="Environment/Pillars" unique_id=454653824 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -60)
+
+[node name="GiantPillar27" parent="Environment/Pillars" unique_id=2015492770 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -60)
+
+[node name="GiantPillar28" parent="Environment/Pillars" unique_id=107683888 instance=ExtResource("3_2xvcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -60)
+
+[node name="Floor" type="StaticBody3D" parent="Environment" unique_id=1991871807]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor" unique_id=36353366]
+mesh = SubResource("BoxMesh_7ols1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor" unique_id=213447207]
+shape = SubResource("BoxShape3D_7ols1")

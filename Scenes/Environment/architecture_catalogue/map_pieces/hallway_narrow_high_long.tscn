@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dik6woirtlanq"]
+
+[ext_resource type="PackedScene" uid="uid://cm1m317iebeao" path="res://Scenes/Environment/architecture_catalogue/hallway_narrow_high.tscn" id="1_dov2e"]
+
+[node name="HallwayNarrowHighLong" type="Node3D" unique_id=196615680]
+
+[node name="HallwayNarrowHigh" parent="." unique_id=1437814396 instance=ExtResource("1_dov2e")]
+
+[node name="HallwayNarrowHigh2" parent="." unique_id=1434456436 instance=ExtResource("1_dov2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="HallwayNarrowHigh3" parent="." unique_id=684211214 instance=ExtResource("1_dov2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)

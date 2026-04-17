@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c7xeucpw82th0"]
+
+[ext_resource type="Material" uid="uid://bjog08v0n6hvk" path="res://Assets/Materials/Prototyping/stairs_greyboxing.tres" id="1_cs45o"]
+[ext_resource type="ArrayMesh" uid="uid://bgpx55xrurq22" path="res://Assets/Models/Environment/Stairs_Thin.obj" id="2_hc0wf"]
+[ext_resource type="ArrayMesh" uid="uid://ij1jm7vsj1oo" path="res://Assets/Models/Environment/Stairs_Collider_Thin.obj" id="3_hc0wf"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hc0wf"]
+data = PackedVector3Array(-2.5, 5.0028, 1, -2.5, 3.8353999, 1, -2.5, 5.0028, 0, -2.5, 5.0028, 0, -2.5, 3.8353999, 1, -2.5, 3.8353999, 0, -2.5, 5.0028, 0, -2.5, 3.8353999, 0, 2.5, 5.0028, 0, 2.5, 5.0028, 0, -2.5, 3.8353999, 0, 2.5, 3.8353999, 0, 2.5, 5.0028, 0, 2.5, 3.8353999, 0, 2.5, 5.0028, 1, 2.5, 5.0028, 1, 2.5, 3.8353999, 0, 2.5, 3.8353999, 1, 2.5, 5.0028, 1, 2.5, 3.8353999, 1, 2.5, 0, 8.9446, 2.5, 0, 8.9446, 2.5, 3.8353999, 1, 2.5, 0, 6.9585, 2.5, 3.8353999, 0, -2.5, 3.8353999, 0, 2.5, 3.8353999, 1, 2.5, 3.8353999, 1, -2.5, 3.8353999, 0, -2.5, 3.8353999, 1, -2.5, 5.0028, 0, 2.5, 5.0028, 0, -2.5, 5.0028, 1, -2.5, 5.0028, 1, 2.5, 5.0028, 0, 2.5, 5.0028, 1, 2.5, 0, 6.9585, -2.5, 0, 6.9585, 2.5, 0, 8.9446, 2.5, 0, 8.9446, -2.5, 0, 6.9585, -2.5, 0, 8.9446, -2.5, 3.8353999, 1, -2.5, 5.0028, 1, -2.5, 0, 6.9585, -2.5, 0, 6.9585, -2.5, 5.0028, 1, -2.5, 0, 8.9446, -2.5, 5.0028, 1, 2.5, 5.0028, 1, -2.5, 0, 8.9446, -2.5, 0, 8.9446, 2.5, 5.0028, 1, 2.5, 0, 8.9446, 2.5, 3.8353999, 1, -2.5, 3.8353999, 1, 2.5, 0, 6.9585, 2.5, 0, 6.9585, -2.5, 3.8353999, 1, -2.5, 0, 6.9585)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=332314041]
+
+[node name="StairsThin" type="MeshInstance3D" parent="." unique_id=1815043497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+material_override = ExtResource("1_cs45o")
+mesh = ExtResource("2_hc0wf")
+
+[node name="StairsColliderThin" type="MeshInstance3D" parent="." unique_id=1077954951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+visible = false
+mesh = ExtResource("3_hc0wf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1368230380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hc0wf")

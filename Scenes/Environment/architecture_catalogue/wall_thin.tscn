@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ua7sv8ypk4wc"]
+
+[ext_resource type="Material" uid="uid://bhjtmnu4na63" path="res://Assets/Materials/Prototyping/dark_greyboxing.tres" id="1_ufo6p"]
+[ext_resource type="Material" uid="uid://ofuun2bvmfmu" path="res://Assets/Materials/Prototyping/wall_greyboxing.tres" id="2_jju3j"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5luvi"]
+size = Vector2(5, 0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8jvs"]
+size = Vector2(5, 0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tpqp6"]
+size = Vector2(5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5guym"]
+size = Vector3(5, 5, 0.5)
+
+[node name="WallThin" type="StaticBody3D" unique_id=811125640]
+
+[node name="FloorSmall3" type="MeshInstance3D" parent="." unique_id=240736091]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 2.5, 0, 0.25)
+material_override = ExtResource("1_ufo6p")
+mesh = SubResource("PlaneMesh_5luvi")
+
+[node name="FloorSmall4" type="MeshInstance3D" parent="." unique_id=1113924586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5, 0.25)
+material_override = ExtResource("1_ufo6p")
+mesh = SubResource("PlaneMesh_5luvi")
+
+[node name="WallLowShort2" type="MeshInstance3D" parent="." unique_id=1088552172]
+transform = Transform3D(1.9106855e-15, -1, 0, 1, 1.9106855e-15, 4.371139e-08, -4.371139e-08, 0, 1, 0, 2.5, 0.25)
+material_override = ExtResource("2_jju3j")
+mesh = SubResource("PlaneMesh_q8jvs")
+
+[node name="WallLowShort3" type="MeshInstance3D" parent="." unique_id=2006341826]
+transform = Transform3D(-5.7320566e-15, 1, 8.742278e-08, 1, 1.9106855e-15, 4.371139e-08, 4.371139e-08, 8.742278e-08, -1, 5, 2.5, 0.25)
+material_override = ExtResource("2_jju3j")
+mesh = SubResource("PlaneMesh_q8jvs")
+
+[node name="WallShort2" type="MeshInstance3D" parent="." unique_id=1709662846]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 2.5, 2.5, 0)
+material_override = ExtResource("2_jju3j")
+mesh = SubResource("PlaneMesh_tpqp6")
+
+[node name="WallShort3" type="MeshInstance3D" parent="." unique_id=996332715]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.5, 2.5, 0.5)
+material_override = ExtResource("2_jju3j")
+mesh = SubResource("PlaneMesh_tpqp6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1900621977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.5, 0.25)
+shape = SubResource("BoxShape3D_5guym")

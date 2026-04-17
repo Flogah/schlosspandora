@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce8y7hleirks7"
+path="res://.godot/imported/Base_Big_Pyr_Square.obj-1a4032fa37244e1d1cb61048f62a5b08.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Base_Big_Pyr_Square.obj-1a4032fa37244e1d1cb61048f62a5b08.mesh"]
+
+source_file="res://Assets/Models/Environment/Pillars/Base_Big_Pyr_Square.obj"
+dest_files=["res://.godot/imported/Base_Big_Pyr_Square.obj-1a4032fa37244e1d1cb61048f62a5b08.mesh", "res://.godot/imported/Base_Big_Pyr_Square.obj-1a4032fa37244e1d1cb61048f62a5b08.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

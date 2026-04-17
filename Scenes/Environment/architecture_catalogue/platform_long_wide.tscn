@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://rngi5whhfm41"]
+
+[ext_resource type="Material" uid="uid://bhjtmnu4na63" path="res://Assets/Materials/Prototyping/dark_greyboxing.tres" id="1_kgche"]
+[ext_resource type="Material" uid="uid://ofuun2bvmfmu" path="res://Assets/Materials/Prototyping/wall_greyboxing.tres" id="2_yvirl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_enmjj"]
+size = Vector2(10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xoy4t"]
+size = Vector2(10, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0rj6"]
+size = Vector3(10, 0.5, 10)
+
+[node name="PlatformLong2" type="StaticBody3D" unique_id=24122707]
+
+[node name="FloorLong4" type="MeshInstance3D" parent="." unique_id=853815898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+material_override = ExtResource("1_kgche")
+mesh = SubResource("PlaneMesh_enmjj")
+
+[node name="WallLow2" type="MeshInstance3D" parent="." unique_id=546629651]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5, -0.25, 10)
+material_override = ExtResource("2_yvirl")
+mesh = SubResource("PlaneMesh_xoy4t")
+
+[node name="WallLow3" type="MeshInstance3D" parent="." unique_id=726067744]
+transform = Transform3D(-1, -5.9604645e-08, 1.7763568e-15, 0, -4.371139e-08, -1, 5.9604645e-08, -1, 4.371139e-08, 5, -0.25, 0)
+material_override = ExtResource("2_yvirl")
+mesh = SubResource("PlaneMesh_xoy4t")
+
+[node name="WallLow4" type="MeshInstance3D" parent="." unique_id=2118832282]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, -0.2588445, 5)
+material_override = ExtResource("2_yvirl")
+mesh = SubResource("PlaneMesh_xoy4t")
+
+[node name="WallLow5" type="MeshInstance3D" parent="." unique_id=2047949096]
+transform = Transform3D(-1.5893256e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -1.5893256e-08, -1.3432863e-16, 10, -0.25, 5)
+material_override = ExtResource("2_yvirl")
+mesh = SubResource("PlaneMesh_xoy4t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1270328863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.25, 5)
+shape = SubResource("BoxShape3D_v0rj6")
+
+[node name="FloorLong3" type="MeshInstance3D" parent="." unique_id=1445960776]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 5, -0.5, 5)
+material_override = ExtResource("1_kgche")
+mesh = SubResource("PlaneMesh_enmjj")

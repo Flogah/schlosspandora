@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dvy5038hflltl"]
+
+[ext_resource type="PackedScene" uid="uid://dog767hv2x0ml" path="res://Scenes/Environment/architecture_catalogue/map_pieces/basic_parts/big_wall.tscn" id="1_7cfjp"]
+
+[node name="VeryBigWall" type="Node3D" unique_id=231483211]
+
+[node name="BigWall" parent="." unique_id=1231954786 instance=ExtResource("1_7cfjp")]
+
+[node name="BigWall2" parent="." unique_id=989378784 instance=ExtResource("1_7cfjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="BigWall3" parent="." unique_id=1967863048 instance=ExtResource("1_7cfjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 15, 0)
+
+[node name="BigWall4" parent="." unique_id=73306002 instance=ExtResource("1_7cfjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
