@@ -1,7 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ofuun2bvmfmu"]
 
-[ext_resource type="Texture2D" uid="uid://b57qc5r1b4m8f" path="res://Assets/Textures/ProtoTex/Purple/texture_10.png" id="1_pe6o4"]
+[ext_resource type="Texture2D" uid="uid://r6h2lyckk83i" path="res://Assets/Textures/Floor_color_bricksonly_90.png" id="1_d8osh"]
 
 [resource]
-albedo_texture = ExtResource("1_pe6o4")
+albedo_texture = ExtResource("1_d8osh")
+uv1_scale = Vector3(0.145, 0.145, 0.145)
+uv1_offset = Vector3(0, -0.01, -0.06)
 uv1_triplanar = true
