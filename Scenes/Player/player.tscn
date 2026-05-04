@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b8e558yv6w0sf" path="res://Scenes/Player/player_hands.tscn" id="2_a3d8c"]
 [ext_resource type="Script" uid="uid://drfutgub3j3nu" path="res://Scenes/Player/playerUI.gd" id="3_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://c8p2ku86uunkt" path="res://Assets/Textures/hand/blinzeln spritesheet mit stinki finger.png" id="4_mtuoh"]
+[ext_resource type="AudioStream" uid="uid://b1k3oiycjk5hp" path="res://SoundFX/Schritte.wav" id="5_htcer"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvnfx"]
 
@@ -26,13 +27,13 @@ region = Rect2(3306, 0, 1653, 1754)
 atlas = ExtResource("4_mtuoh")
 region = Rect2(0, 1754, 1653, 1754)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gk6dx"]
-atlas = ExtResource("4_mtuoh")
-region = Rect2(3306, 1754, 1653, 1754)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtuoh"]
 atlas = ExtResource("4_mtuoh")
 region = Rect2(1653, 1754, 1653, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk6dx"]
+atlas = ExtResource("4_mtuoh")
+region = Rect2(3306, 1754, 1653, 1754)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7g0yx"]
 animations = [{
@@ -54,11 +55,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_gk6dx")
-}, {
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_mtuoh")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_gk6dx")
 }],
 "loop": false,
 "name": &"interact",
@@ -68,6 +69,14 @@ animations = [{
 [node name="Player" type="CharacterBody3D" unique_id=1448344412 groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_uvnfx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1471982164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.028281689)
+light_color = Color(0.661081, 0.661081, 0.6610809, 1)
+light_energy = 0.637
+light_indirect_energy = 1.988
+light_specular = 0.395
+omni_range = 25.4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1738973053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0042169094, 0)
@@ -96,18 +105,22 @@ script = ExtResource("3_xpcdj")
 [node name="Hand" type="Control" parent="UI" unique_id=1954817783]
 unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="AnimatedSpriteHand" type="AnimatedSprite2D" parent="UI/Hand" unique_id=1265880232]
 unique_name_in_owner = true
-position = Vector2(786, 540)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-38, -40)
+scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_7g0yx")
-animation = &"interact"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="PauseMenu" type="Control" parent="UI" unique_id=1923941847]
@@ -216,3 +229,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = "You did not save the world."
 horizontal_alignment = 1
+
+[node name="AudioSteps" type="AudioStreamPlayer" parent="." unique_id=810980457]
+stream = ExtResource("5_htcer")
